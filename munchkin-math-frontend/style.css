@@ -1,0 +1,146 @@
+body {
+  background-color: #3490dc;
+  font-family: "Mali", cursive;
+}
+
+h1 {
+  color: #e8d258;
+  font-size: 55px;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+}
+
+.input-box {
+  border-radius: 10px;
+  border-style: none;
+  height: 3em;
+  width: 20em;
+  text-align: center;
+  position: relative;
+  background-color: orange;
+  color: whitesmoke;
+  font-size: 12px;
+  font-family: "Mali", cursive;
+}
+
+::placeholder {
+  color: whitesmoke;
+  font-size: 12px;
+}
+.submit-box {
+  border-radius: 10px;
+  border-style: none;
+  height: 3em;
+  width: 3em;
+  text-align: center;
+  position: relative;
+  background-color: orange;
+  color: whitesmoke;
+  font-size: 12px;
+  font-family: "Mali", cursive;
+}
+
+.balloon1 {
+  height: 200px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon1;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon1 {
+  0% {
+    top: 500px;
+    left: 10%;
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+    top: -600px;
+    left: 10%;
+    opacity: 1;
+  }
+}
+
+.balloon2 {
+  height: 200px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon2;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon2 {
+  0% {
+    top: 500px;
+    left: 30%;
+  }
+  50% {
+    left: 60%;
+  }
+  100% {
+    top: -600px;
+    left: 30%;
+    opacity: 1;
+  }
+}
+
+.balloon3 {
+  height: 200px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon3;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon3 {
+  0% {
+    top: 500px;
+    left: 100%;
+    transform: scale(1);
+  }
+  50% {
+    left: 70%;
+    transform: scale(1.5);
+  }
+  100% {
+    top: -600px;
+    left: 100%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+
+.nameBounce {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.bounce {
+  color: whitesmoke;
+  animation-timing-function: ease-in-out;
+  animation-name: bounceIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
