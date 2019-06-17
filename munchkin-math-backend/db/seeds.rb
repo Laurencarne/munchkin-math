@@ -19,7 +19,7 @@ additionTest = Test.create(name: "Basic Addition")
 subtractionTest = Test.create(name: "Basic Subtraction")
 
 
-# Seeding Questions
+
 
 additionQ1 = Question.create(test_id: 1, number: 1, question: "What does 2 + 3 equal?", correct_answer: "5", answer1: "4", answer2: "9", answer3: "1")
 additionQ2 = Question.create(test_id: 1, number: 2, question: "What does 4 + 4 equal?", correct_answer: "8", answer1: "10", answer2: "5", answer3: "12")
