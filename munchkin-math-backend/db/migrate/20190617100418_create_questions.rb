@@ -1,6 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration[5.2]
   def change
     create_table :questions do |t|
+      t.integer :testId
       t.integer :number
       t.text :question
       t.text :correct_answer
