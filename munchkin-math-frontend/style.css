@@ -351,9 +351,11 @@ h1 {
 
 .fill {
   background-image: url("https://media-private.canva.com/MACG0XIsb_Q/1/screen-1.png?response-expires=Mon%2C%2017%20Jun%202019%2011%3A38%3A13%20GMT&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190617T093135Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7597&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20190617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=141e1edb84f125a04872ce4894608c83150750fb7ab147790c13649d629eb767");
+  background-position: center;
+  background-size: contain;
   position: relative;
   height: 150px;
-  width: auto;
+  width: 150px;
   top: 5px;
   left: 5px;
   cursor: pointer;
@@ -362,4 +364,21 @@ h1 {
 .empty {
   display: inline-block;
   height: 160px;
+  width: 160px;
+  margin: 10px;
+  border: 3px black solid;
+  background-color: white;
+}
+
+.hold {
+  border: solid orange 4px;
+}
+
+.hovered {
+  background: lightGrey;
+  border-style: dashed;
+}
+
+.invisible {
+  display: none;
 }
