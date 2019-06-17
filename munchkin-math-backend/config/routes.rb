@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :user_tests
-  resources :questions
-  resources :tests
+  resources :user_tests, only: [:index, :show]
+  resources :questions, only: [:index, :show]
+  resources :tests, only: [:index, :show]
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
