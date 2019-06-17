@@ -133,3 +133,19 @@ function enterPage() {
   body.innerHTML = "";
 }
 ///////////////////////
+function dragAndDropPage() {
+  const div1 = document.createElement("div");
+  const div2 = document.createElement("div");
+  const div3 = document.createElement("div");
+  const div4 = document.createElement("div");
+
+  const innerDiv = document.createElement("div");
+
+  div1.className = "empty";
+  div2.className = "empty";
+  div3.className = "empty";
+  div4.className = "empty";
+
+  innerDiv.className = "fill";
+  innerDiv.draggable = true;
+}
