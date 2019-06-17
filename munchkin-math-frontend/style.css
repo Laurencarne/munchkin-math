@@ -5,8 +5,9 @@ body {
 
 h1 {
   color: #e8d258;
-  font-size: 55px;
+  font-size: 5em;
   text-align: center;
+  text-shadow: 4px 4px 6px orange;
 }
 
 .input {
@@ -31,6 +32,7 @@ h1 {
   color: whitesmoke;
   font-size: 12px;
 }
+
 .submit-box {
   border-radius: 10px;
   border-style: none;
@@ -45,7 +47,7 @@ h1 {
 }
 
 .balloon1 {
-  height: 200px;
+  height: 300px;
   width: auto;
   position: absolute;
   animation-name: flyBalloon1;
@@ -55,21 +57,27 @@ h1 {
 
 @keyframes flyBalloon1 {
   0% {
-    top: 500px;
+    top: 800px;
     left: 10%;
+    transform: scale(1);
   }
-  50% {
+  40% {
     left: 30%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 10%;
   }
   100% {
     top: -600px;
     left: 10%;
+    transform: scale(0.5);
     opacity: 1;
   }
 }
 
 .balloon2 {
-  height: 200px;
+  height: 300px;
   width: auto;
   position: absolute;
   animation-name: flyBalloon2;
@@ -79,21 +87,27 @@ h1 {
 
 @keyframes flyBalloon2 {
   0% {
-    top: 500px;
-    left: 30%;
+    top: 800px;
+    left: 5%;
+    transform: scale(1);
   }
-  50% {
-    left: 60%;
+  40% {
+    left: 20%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 5%;
   }
   100% {
     top: -600px;
-    left: 30%;
+    left: 5%;
+    transform: scale(0.5);
     opacity: 1;
   }
 }
 
 .balloon3 {
-  height: 200px;
+  height: 300px;
   width: auto;
   position: absolute;
   animation-name: flyBalloon3;
@@ -103,13 +117,16 @@ h1 {
 
 @keyframes flyBalloon3 {
   0% {
-    top: 500px;
+    top: 800px;
     left: 100%;
     transform: scale(1);
   }
-  50% {
+  40% {
     left: 70%;
     transform: scale(1.5);
+  }
+  70% {
+    left: 95%;
   }
   100% {
     top: -600px;
@@ -119,10 +136,167 @@ h1 {
   }
 }
 
+.balloon4 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon4;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon4 {
+  0% {
+    top: 800px;
+    left: 80%;
+    transform: scale(1);
+  }
+  40% {
+    left: 60%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 90%;
+  }
+  100% {
+    top: -600px;
+    left: 90%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+
+.balloon5 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon5;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon5 {
+  0% {
+    top: 800px;
+    left: 70%;
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  100% {
+    top: -600px;
+    left: 10%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+.balloon6 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon6;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon6 {
+  0% {
+    top: 800px;
+    left: 40%;
+    transform: scale(1);
+  }
+  40% {
+    left: 50%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 60%;
+  }
+  100% {
+    top: -600px;
+    left: 60%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
 .nameBounce {
   display: flex;
   justify-content: center;
   margin: 20px;
+  text-align: center;
+}
+
+.nameBounce span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bouncy 0.7s ease infinite alternate;
+  font-family: "Mali", cursive;
+  font-size: 80px;
+  line-height: 110px;
+  color: whitesmoke;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 0 transparent, 0 11px 0 transparent,
+    0 12px 0 transparent, 0 13px 0 transparent, 0 14px 0 transparent,
+    0 15px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nameBounce span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.nameBounce span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nameBounce span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.nameBounce span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.nameBounce span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.nameBounce span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.nameBounce span:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.nameBounce span:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.nameBounce span:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.nameBounce span:nth-child(10) {
+  animation-delay: 1s;
+}
+.nameBounce span:nth-child(11) {
+  animation-delay: 1.1s;
+}
+.nameBounce span:nth-child(12) {
+  animation-delay: 1.2s;
+}
+.nameBounce span:nth-child(13) {
+  animation-delay: 1.3s;
+}
+.nameBounce span:nth-child(14) {
+  animation-delay: 1.4s;
+}
+.nameBounce span:nth-child(15) {
+  animation-delay: 1.5s;
+}
+
+@keyframes bouncy {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+      0 10px 0 #ccc, 0 11px 0 #ccc, 0 12px 0 #ccc, 0 13px 0 #ccc, 0 14px 0 #ccc,
+      0 15px 0 #ccc, 0 50px 25px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .bounce {
@@ -143,4 +317,26 @@ h1 {
   100% {
     transform: scale(1);
   }
+}
+
+.enterSite {
+  margin: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.enterBtn {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-color: #ff5b5b;
+  border-width: 0;
+  color: whitesmoke;
+  font-size: 12px;
+  font-family: "Mali", cursive;
+  align-content: center;
+  animation-timing-function: ease-in-out;
+  animation-name: bounceIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
