@@ -11,13 +11,14 @@
 lauren = User.create(name: "Lauren", color: "Purple", age: 5)
 patrick = User.create(name: "Patrick", color: "Green", age: 4)
 
-# Seeding UserTests
-
-UserTest.create(userId: 1, testId: 1)
 # Seeding Test
 addition101 = Test.create(name: "Basic Addition")
 
 # Seeding Questions
 
-AdditionQ1 = Question.create(testId: 1, number: 1, question: "What does 2 + 3 equal?", correct_answer: "5", answer1: "4", answer2: "9", answer3: "1")
-AdditionQ2 = Question.create(testId: 1, number: 2, question: "What does 4 + 4 equal?", correct_answer: "8", answer1: "10", answer2: "5", answer3: "12")
+additionQ1 = Question.create(test_id: 1, number: 1, question: "What does 2 + 3 equal?", correct_answer: "5", answer1: "4", answer2: "9", answer3: "1")
+additionQ2 = Question.create(test_id: 1, number: 2, question: "What does 4 + 4 equal?", correct_answer: "8", answer1: "10", answer2: "5", answer3: "12")
+
+# Seeding UserTests
+
+usertest1 =  UserTest.create(test_id: 1, user_id: 1)

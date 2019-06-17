@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2019_06_17_101422) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "questions", force: :cascade do |t|
-    t.integer "testId"
+    t.integer "test_id"
     t.integer "number"
     t.text "question"
     t.text "correct_answer"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 2019_06_17_101422) do
   end
 
   create_table "user_tests", force: :cascade do |t|
-    t.integer "userId"
-    t.integer "testId"
+    t.integer "user_id"
+    t.integer "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
