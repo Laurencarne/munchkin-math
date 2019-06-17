@@ -8,9 +8,12 @@
 
 # Seeding Users
 
-lauren = User.create(name: "Lauren", color: "Purple" age: 5)
+lauren = User.create(name: "Lauren", color: "Purple", age: 5)
 patrick = User.create(name: "Patrick", color: "Green", age: 4)
 
+# Seeding UserTests
+
+UserTest.create(userId: 1, testId: 1)
 # Seeding Test
 addition101 = Test.create(name: "Basic Addition")
 
