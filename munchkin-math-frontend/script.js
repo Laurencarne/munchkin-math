@@ -1,5 +1,7 @@
 const form = document.querySelector("form");
 const balloonDiv = document.querySelector(".balloonDiv");
+const body = document.querySelector("body");
+const enterSiteDiv = document.querySelector(".enterSite");
 ///////////////////////
 form.addEventListener("submit", sayHello);
 form.addEventListener("submit", flyBalloon);
@@ -87,38 +89,47 @@ function flyBalloon() {
 
   setInterval(() => {
     clearInterval(int1);
-  }, 5000);
+  }, 4000);
 
   setInterval(() => {
     clearInterval(int2);
-  }, 6000);
+  }, 4500);
 
   setInterval(() => {
     clearInterval(int3);
-  }, 6500);
+  }, 5000);
 
   setInterval(() => {
     clearInterval(int4);
-  }, 7000);
+  }, 5500);
 
   setInterval(() => {
     clearInterval(int5);
-  }, 8000);
+  }, 6000);
 
   setInterval(() => {
     clearInterval(int6);
-  }, 8500);
+  }, 6500);
 }
 ///////////////////////
 function enterSite() {
   setTimeout(() => {
-    const enterSiteDiv = document.querySelector(".enterSite");
+    const img = document.createElement("img");
+    img.src =
+      "https://media-private.canva.com/MACPw4r7vnc/1/screen-1.png?response-expires=Mon%2C%2017%20Jun%202019%2011%3A03%3A10%20GMT&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190617T082711Z&X-Amz-SignedHeaders=host&X-Amz-Expires=9358&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20190617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=99924990b9e2f9f9f71e3267be2ec2731fc3ae16353f41c0937e1058fd388e62";
+    img.className = "enterImg";
 
-    const enterBtn = document.createElement("button");
-    enterBtn.innerText = "Enter Site";
-    enterBtn.className = "enterBtn";
+    const enterP = document.createElement("span");
+    enterP.className = "enterP";
+    enterP.innerText = "Enter Site...";
 
-    enterSiteDiv.appendChild(enterBtn);
-  }, 4000);
+    enterSiteDiv.append(img, enterP);
+  }, 6000);
+}
+///////////////////////
+enterSiteDiv.addEventListener("click", enterPage);
+///////////////////////
+function enterPage() {
+  body.innerHTML = "";
 }
 ///////////////////////

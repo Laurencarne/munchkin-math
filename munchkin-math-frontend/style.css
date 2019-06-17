@@ -7,7 +7,7 @@ h1 {
   color: #e8d258;
   font-size: 5em;
   text-align: center;
-  text-shadow: 4px 4px 6px orange;
+  text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .input {
@@ -26,6 +26,7 @@ h1 {
   color: whitesmoke;
   font-size: 12px;
   font-family: "Mali", cursive;
+  box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 ::placeholder {
@@ -44,6 +45,7 @@ h1 {
   color: whitesmoke;
   font-size: 12px;
   font-family: "Mali", cursive;
+  box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .balloon1 {
@@ -312,24 +314,28 @@ h1 {
     transform: scale(1);
   }
   50% {
-    transform: scale(2);
+    transform: scale(0.5);
   }
   100% {
     transform: scale(1);
   }
 }
 
+.enterP {
+  text-align: right;
+  padding-top: 20em;
+  color: whitesmoke;
+}
 .enterSite {
   margin: 80px;
   display: flex;
   justify-content: center;
+  text-align: right;
 }
 
-.enterBtn {
-  height: 5em;
-  width: 5em;
-  border-radius: 50%;
-  background-color: #ff5b5b;
+.enterImg {
+  height: 30em;
+  width: auto;
   border-width: 0;
   color: whitesmoke;
   font-size: 12px;
@@ -338,5 +344,5 @@ h1 {
   animation-timing-function: ease-in-out;
   animation-name: bounceIn;
   animation-duration: 2s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 3;
 }
