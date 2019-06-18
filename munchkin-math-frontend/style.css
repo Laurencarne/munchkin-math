@@ -1,8 +1,9 @@
+/* ALL PAGES */
 body {
   background-color: #3490dc;
   font-family: "Mali", cursive;
 }
-
+/* SIGN IN PAGE */
 h1 {
   color: #e8d258;
   font-size: 5em;
@@ -325,26 +326,21 @@ h1 {
   }
 }
 
-.enterP {
-  text-align: right;
-  padding-top: 20em;
-  color: whitesmoke;
-}
 .enterSite {
-  margin: 80px;
   display: flex;
-  justify-content: center;
-  text-align: right;
+  justify-content: space-around;
+  align-content: center;
 }
 
 .enterImg {
+  display: flex;
+  justify-content: space-around;
   height: 30em;
   width: auto;
   border-width: 0;
   color: whitesmoke;
   font-size: 12px;
   font-family: "Mali", cursive;
-  align-content: center;
   animation-timing-function: ease-in-out;
   animation-name: bounceIn;
   animation-duration: 2s;
@@ -362,7 +358,7 @@ h1 {
   justify-content: space-around;
 }
 
-div p {
+.answerP {
   text-align: center;
   vertical-align: middle;
   justify-content: center;
@@ -376,7 +372,7 @@ div p {
 .fill {
   display: flex;
   justify-content: space-around;
-  background-image: url("https://media-private.canva.com/MACG0XIsb_Q/1/screen-1.png?response-expires=Mon%2C%2017%20Jun%202019%2011%3A38%3A13%20GMT&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190617T093135Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7597&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20190617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=141e1edb84f125a04872ce4894608c83150750fb7ab147790c13649d629eb767");
+  background-image: url("https://i.imgur.com/yIS9HuQ.png");
   background-position: center;
   background-size: contain;
   position: relative;
@@ -458,4 +454,33 @@ div p {
   100% {
     transform: scale(1);
   }
+}
+/* Landing Page */
+
+.flexDivLanding {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+}
+.testCat {
+  text-align: center;
+  border: rgba(249, 239, 147, 0.5) solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px rgba(249, 239, 147, 0.5);
+  border-radius: 0.2rem;
+}
+
+.testCat:hover {
+  background-color: rgba(249, 239, 147, 0.2);
+}
+
+.landingPageTestPicture {
+  height: 200px;
+  width: auto;
 }

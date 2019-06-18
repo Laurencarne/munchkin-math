@@ -6,7 +6,21 @@ const questionsUrl = `${baseUrl}questions`;
 const fetchTestsData = () => fetch(testsUrl).then(response => response.json());
 
 const getJsonData = json => json;
-//
+
+function renderQuestion(filterTests) {
+  filterTests.forEach(question => {
+    body.appendChild(addToPage(question));
+  });
+}
+
+function displayTestQuestion(testName) {
+  fetchTestsData().then(json => {
+    tests = json.slice(0);
+    let filterTests = tests.filter(test => test.name === testName);
+    renderQuestion(filterTests);
+  });
+}
+
 // // function renderQuestions(json) {
 // //   // return data.find(data => data.name === testName);
 // //   json.forEach(test => {
@@ -33,16 +47,3 @@ const getJsonData = json => json;
 //   return divy;
 // }
 //
-// function renderQuestion(filterTests) {
-//   filterTests.forEach(question => {
-//     body.appendChild(addToPage(question));
-//   });
-// }
-//
-// function displayTestQuestion(testName) {
-//   fetchTestsData().then(json => {
-//     tests = json.slice(0);
-//     let filterTests = tests.filter(test => test.name === testName);
-//     renderQuestion(filterTests);
-//   });
-// }
