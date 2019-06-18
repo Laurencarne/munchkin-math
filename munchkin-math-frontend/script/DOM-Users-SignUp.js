@@ -1,5 +1,3 @@
-let imageURL;
-
 function signupPage() {
   flexDivBody.innerHTML = "";
 
@@ -28,7 +26,7 @@ function signupPage() {
   submit.value = "Let's Play!";
   submit.className = "submit-box";
 
-  submit.addEventListener("submit", () => makeUser(imageURL));
+  form.addEventListener("submit", makeUser);
 
   const imageHolderDiv = document.createElement("div");
   imageHolderDiv.className = "imageHolderDiv";
@@ -58,6 +56,7 @@ function displayUserAvatars(image) {
 }
 
 function chooseAvatar(image) {
+  const form = document.querySelector(".input");
   let eventsArray = document.querySelectorAll(".miniInnerDiv");
   let arrayList = [];
   let newArray = [];
@@ -76,10 +75,29 @@ function chooseAvatar(image) {
       event.target.classList.add("selected");
     }
   }
-  let imageURL = image;
+  form.dataset.url = image;
 }
 
-function makeUser(imageURL) {
+function makeUser() {
   event.preventDefault();
-  console.log(imageURl);
+
+  const newUser = {
+    name: event.target[0].value,
+    age: event.target[1].value,
+    avatar: event.target.dataset.url,
+    color: ""
+  };
+  addUserToServer(newUser).then(sayHello(newUser));
+
+  event.target.reset();
+}
+
+function addUserToServer(user) {
+  return fetch(usersUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(user)
+  });
 }
