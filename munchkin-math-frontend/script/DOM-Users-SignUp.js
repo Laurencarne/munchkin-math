@@ -1,5 +1,4 @@
-let clicked = true;
-let colored = false;
+let imageURL;
 
 function signupPage() {
   flexDivBody.innerHTML = "";
@@ -29,6 +28,8 @@ function signupPage() {
   submit.value = "Let's Play!";
   submit.className = "submit-box";
 
+  submit.addEventListener("submit", () => makeUser(imageURL));
+
   const imageHolderDiv = document.createElement("div");
   imageHolderDiv.className = "imageHolderDiv";
 
@@ -51,35 +52,34 @@ function displayUserAvatars(image) {
 
   innerDiv.append(img);
 
-  innerDiv.addEventListener("click", chooseAvatar);
+  innerDiv.addEventListener("click", () => chooseAvatar(image));
 
   return innerDiv;
 }
 
-function chooseAvatar() {
+function chooseAvatar(image) {
   let eventsArray = document.querySelectorAll(".miniInnerDiv");
   let arrayList = [];
   let newArray = [];
   eventsArray.forEach(array => arrayList.push(array.classList));
   arrayList.forEach(x => newArray.push(x[1]));
-  console.log(arrayList);
-  console.log(newArray);
-
-  if (clicked === true && colored === false) {
-    if (event.target.getAttribute("class") === "miniUserAvatarImg") {
-      event.target.parentNode.classList.add("selected");
-    } else {
-      event.target.classList.add("selected");
-    }
-    colored = !colored;
-    clicked = !clicked;
-  } else if (clicked === false && colored === true) {
+  if (newArray.includes("selected")) {
     if (event.target.getAttribute("class") === "miniUserAvatarImg") {
       event.target.parentNode.classList.remove("selected");
     } else {
       event.target.classList.remove("selected");
     }
-    colored = !colored;
-    clicked = !clicked;
+  } else {
+    if (event.target.getAttribute("class") === "miniUserAvatarImg") {
+      event.target.parentNode.classList.add("selected");
+    } else {
+      event.target.classList.add("selected");
+    }
   }
+  let imageURL = image;
+}
+
+function makeUser(imageURL) {
+  event.preventDefault();
+  console.log(imageURl);
 }
