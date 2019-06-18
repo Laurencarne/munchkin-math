@@ -1,12 +1,12 @@
 function additionTestOptions() {
-  const flexDiv = document.querySelector(".flexDivLanding");
+  const flexDiv = document.querySelector(".flexDiv");
   flexDiv.innerHTML = "";
 
   const popOutDiv = document.createElement("div");
   popOutDiv.className = popOutDiv;
 
   const easyDiv = document.createElement("div");
-  easyDiv.className = "easyHardDiv";
+  easyDiv.className = "innerDiv";
   const pEasy = document.createElement("p");
   pEasy.innerText = "Level One";
   const imgEasy = document.createElement("img");
@@ -15,7 +15,7 @@ function additionTestOptions() {
   easyDiv.append(imgEasy, pEasy);
 
   const hardDiv = document.createElement("div");
-  hardDiv.className = "easyHardDiv";
+  hardDiv.className = "innerDiv";
   const pHard = document.createElement("p");
   pHard.innerText = "Level Two";
   const imgHard = document.createElement("img");
@@ -30,14 +30,14 @@ function additionTestOptions() {
 }
 
 function subtractionTestOptions() {
-  const flexDiv = document.querySelector(".flexDivLanding");
+  const flexDiv = document.querySelector(".flexDiv");
   flexDiv.innerHTML = "";
 
   const popOutDiv = document.createElement("div");
   popOutDiv.className = popOutDiv;
 
   const easyDiv = document.createElement("div");
-  easyDiv.className = "easyHardDiv";
+  easyDiv.className = "innerDiv";
   const pEasy = document.createElement("p");
   pEasy.innerText = "Level One";
   const imgEasy = document.createElement("img");
@@ -46,7 +46,7 @@ function subtractionTestOptions() {
   easyDiv.append(imgEasy, pEasy);
 
   const hardDiv = document.createElement("div");
-  hardDiv.className = "easyHardDiv";
+  hardDiv.className = "innerDiv";
   const pHard = document.createElement("p");
   pHard.innerText = "Level Two";
   const imgHard = document.createElement("img");
