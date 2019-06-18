@@ -484,3 +484,18 @@ h1 {
   height: 200px;
   width: auto;
 }
+
+.easyHardDiv {
+  text-align: center;
+  border: rgba(249, 239, 147, 0.5) solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px rgba(249, 239, 147, 0.5);
+  border-radius: 0.2rem;
+}
+
+.easyHardDiv:hover {
+  background-color: rgba(249, 239, 147, 0.2);
+}

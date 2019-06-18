@@ -37,43 +37,7 @@ function landingPage() {
   flexDiv.append(numbersTestDiv, additionTestDiv, subtractionTestDiv);
   body.appendChild(flexDiv);
 
-  numbersTestDiv.addEventListener("click", numbersTestOptions);
+  numbersTestDiv.addEventListener("click", numbersTest);
   additionTestDiv.addEventListener("click", additionTestOptions);
   subtractionTestDiv.addEventListener("click", subtractionTestOptions);
-}
-
-const popOutDiv = document.createElement("div");
-popOutDiv.className = popOutDiv;
-
-const easyDiv = document.createElement("div");
-easyDiv.className = easyDiv;
-const pEasy = document.createElement("p");
-pEasy.innerText = "Level One";
-const imgEasy = document.createElement("img");
-imgEasy.src = "https://i.imgur.com/kBwjycy.png";
-imgEasy.className = "landingPageTestPicture";
-easyDiv.append(imgEasy, pEasy);
-
-const hardDiv = document.createElement("div");
-hardDiv.className = hardDiv;
-const pHard = document.createElement("p");
-pHard.innerText = "Level Two";
-const imgHard = document.createElement("img");
-imgHard.src = "https://i.imgur.com/ZW3TteV.png";
-imgHard.className = "landingPageTestPicture";
-hardDiv.append(imgHard, pHard);
-
-popOutDiv.append(easyDiv, hardDiv);
-
-function numbersTestOptions() {
-  console.log("Numbers");
-}
-
-function additionTestOptions() {
-  console.log("Addition");
-  const flexDivLanding = document.querySelector(".flexDivLanding");
-}
-
-function subtractionTestOptions() {
-  console.log("Subtraction");
 }
