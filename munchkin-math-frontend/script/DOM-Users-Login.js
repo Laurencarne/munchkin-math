@@ -1,14 +1,7 @@
-const fetchUsers = () => fetch(usersUrl).then(response => response.json());
-
-// const getJsonData = json => json;
-
-function loginPage() {
-  body.html = "";
-}
-
 function makeUserCards(user) {
-  const flexDiv = document.createElement("div");
-  flexDiv.className = flexDiv;
+  const innerDiv = document.createElement("div");
+  innerDiv.className = "innerDiv";
+  innerDiv.dataset.id = user.id;
 
   const h3 = document.createElement("h3");
   h3.className = "loginName";
@@ -22,15 +15,20 @@ function makeUserCards(user) {
   img.className = "userAvatarImg";
   img.src = user.avatar;
 
-  flexDiv.append(h3, img, p);
+  innerDiv.append(h3, img, p);
 
-  return flexDiv;
+  innerDiv.addEventListener("click", () => sayHello(user));
+
+  return innerDiv;
 }
 
 function renderUsers(json) {
-  body.innerHTML = "";
+  flexDivBody.innerHTML = "";
+  const h2 = document.createElement("h2");
+  h2.innerText = "Select your profile!";
+  bodySecondTitle.appendChild(h2);
   json.forEach(function(user) {
-    body.appendChild(makeUserCards(user));
+    flexDivBody.appendChild(makeUserCards(user));
   });
 }
 

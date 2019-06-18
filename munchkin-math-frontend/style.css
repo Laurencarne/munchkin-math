@@ -11,42 +11,65 @@ h1 {
   text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
+h2 {
+  color: #e8d258;
+  font-size: 3em;
+  text-align: center;
+  text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
 .input {
-  display: flex;
-  justify-content: center;
+  width: 80%;
+  position: relative;
+  display: inline-block;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input-box {
+  width: 100%;
   border-radius: 10px;
-  border-style: none;
+  border: orange 2px solid;
   height: 3em;
-  width: 20em;
   text-align: center;
-  position: relative;
-  background-color: orange;
-  color: whitesmoke;
+  background-color: white;
+  color: #3490dc;
   font-size: 12px;
   font-family: "Mali", cursive;
   box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
+
+.input-box:hover {
+  background-color: orange;
+  border: whitesmoke solid 1px;
+  color: #3490dc;
 }
 
 ::placeholder {
-  color: whitesmoke;
+  color: rgba(52, 144, 220, 0.6);
   font-size: 12px;
 }
 
 .submit-box {
+  width: 100%;
   border-radius: 10px;
-  border-style: none;
+  border: whitesmoke 2px solid;
   height: 3em;
-  width: 3em;
   text-align: center;
-  position: relative;
-  background-color: orange;
+  background-color: rgba(255, 154, 2, 1);
   color: whitesmoke;
   font-size: 12px;
   font-family: "Mali", cursive;
   box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.submit-box:hover {
+  background-color: whitesmoke;
+  border: whitesmoke solid 1px;
+  color: orange;
 }
 
 .balloon1 {
@@ -499,6 +522,54 @@ h1 {
 }
 
 .userAvatarImg {
-  height: 200px;
+  height: 175px;
   width: auto;
+}
+
+.loginAge {
+  margin: 0;
+}
+
+.loginName {
+  margin: 0;
+}
+
+/* AVATARS */
+.miniInnerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: rgba(249, 239, 147, 0.5) solid 1px;
+  width: 120px;
+  height: 120px;
+  margin: 1rem 0.5rem;
+  box-shadow: 3px 4px rgba(249, 239, 147, 0.5);
+  border-radius: 0.2rem;
+}
+
+.miniInnerDiv:hover {
+  background-color: rgba(249, 239, 147, 0.2);
+}
+
+.selected {
+  background-color: orange;
+}
+
+.selected:hover {
+  background-color: orange;
+}
+
+.miniUserAvatarImg {
+  justify-content: center;
+  height: 90px;
+  width: 90px;
+}
+
+.imageHolderDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
 }

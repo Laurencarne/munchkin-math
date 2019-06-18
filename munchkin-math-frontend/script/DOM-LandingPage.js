@@ -1,5 +1,16 @@
 function landingPage() {
-  body.innerHTML = "";
+  flexDivBody.innerHTML = "";
+  bodySecondTitle.className -= " nameBounce";
+  bodySecondTitle.innerHTML = "";
+  bodyTitle.innerHTML = "";
+
+  const h1 = document.createElement("h1");
+  h1.innerText = "Munchkin Math";
+  bodyTitle.appendChild(h1);
+
+  const h2 = document.createElement("h2");
+  h2.innerText = "Select Today's Test";
+  bodySecondTitle.appendChild(h2);
 
   const flexDiv = document.createElement("div");
   flexDiv.className = "flexDiv";
@@ -35,7 +46,7 @@ function landingPage() {
   subtractionTestDiv.append(pictureSubtraction, subtractionTestDivInner);
 
   flexDiv.append(numbersTestDiv, additionTestDiv, subtractionTestDiv);
-  body.appendChild(flexDiv);
+  flexDivBody.appendChild(flexDiv);
 
   // numbersTestDiv.addEventListener("click", numbersTest);
   additionTestDiv.addEventListener("click", additionTestOptions);

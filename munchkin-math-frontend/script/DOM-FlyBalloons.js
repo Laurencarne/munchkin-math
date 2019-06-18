@@ -1,6 +1,4 @@
 function flyBalloon() {
-  form.style.display = "none";
-
   let int1 = setInterval(function() {
     const img1 = document.createElement("img");
     img1.src = "https://media-public.canva.com/MADZbPBp-pU/1/screen.svg";

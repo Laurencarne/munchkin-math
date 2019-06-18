@@ -1,7 +1,26 @@
-const form = document.querySelector("form");
 const balloonDiv = document.querySelector(".balloonDiv");
 const body = document.querySelector("body");
 const enterSiteDiv = document.querySelector(".enterSite");
+const flexDivBody = document.querySelector("#flexDiv");
+const bodyTitle = document.querySelector(".bodyTitle");
+const bodySecondTitle = document.querySelector(".bodySecondTitle");
+const fetchUsers = () => fetch(usersUrl).then(response => response.json());
+const avatars = [
+  "https://i.imgur.com/FH0SJMM.png",
+  "https://i.imgur.com/tTpEPBa.png",
+  "https://i.imgur.com/LnDRhUl.png",
+  "https://i.imgur.com/smtuHn5.png",
+  "https://i.imgur.com/rRlxBHn.png",
+  "https://i.imgur.com/xan5sih.png",
+  "https://i.imgur.com/hzCfWht.png",
+  "https://i.imgur.com/V0lOVy8.png",
+  "https://i.imgur.com/x6P8NhG.png",
+  "https://i.imgur.com/SnKgXqk.png"
+];
+
+document.addEventListener("DOMContentLoaded", function() {
+  loginOrSignUp();
+});
 
 function loginOrSignUp() {
   const flexDiv = document.createElement("div");
@@ -29,27 +48,31 @@ function loginOrSignUp() {
 
   signupDiv.append(imgSignup, pSignup);
   flexDiv.append(loginDiv, signupDiv);
-  body.appendChild(flexDiv);
+  flexDivBody.appendChild(flexDiv);
 
-  loginDiv.addEventListener("click", loginPage);
+  loginDiv.addEventListener("click", fetchThenRenderUsers);
   signupDiv.addEventListener("click", signupPage);
 }
 
-function sayHello() {
-  event.preventDefault();
+function sayHello(user) {
+  flexDivBody.innerHTML = "";
+  bodySecondTitle.innerHTML = "";
 
-  const nameDiv = document.querySelector(".nameBounce");
+  bodySecondTitle.className += " nameBounce";
 
-  let splitName = event.target[0].value.split("");
+  let splitName = user.name.split("");
 
   splitName.forEach(letter => {
     const span = document.createElement("span");
     span.innerText = letter;
     span.className = "letterBounce";
-    nameDiv.appendChild(span);
+    bodySecondTitle.appendChild(span);
   });
+  flyBalloon();
 
-  event.target.reset();
+  setTimeout(() => {
+    landingPage();
+  }, 9500);
 }
 
 function enterSite() {
