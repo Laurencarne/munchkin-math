@@ -497,3 +497,8 @@ h1 {
   margin: 0;
   margin-top: 5px;
 }
+
+.userAvatarImg {
+  height: 200px;
+  width: auto;
+}
