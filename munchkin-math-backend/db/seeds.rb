@@ -1,8 +1,11 @@
-# USERS
-User.create(name: "Lauren", color: "Purple", age: 5)
-User.create(name: "Patrick", color: "Green", age: 4)
+# AVATAR OBJECT
+avatar = ["https://i.imgur.com/FH0SJMM.png", "https://i.imgur.com/tTpEPBa.png", "https://i.imgur.com/LnDRhUl.png", "https://i.imgur.com/smtuHn5.png", "https://i.imgur.com/rRlxBHn.png", "https://i.imgur.com/xan5sih.png", "https://i.imgur.com/hzCfWht.png", "https://i.imgur.com/V0lOVy8.png", "https://i.imgur.com/x6P8NhG.png", "https://i.imgur.com/SnKgXqk.png"]
 
-8.times do User.create(name: Faker::Name.unique.first_name, color: Faker::Color.color_name, age: Faker::Number.between(3, 8) )
+# USERS
+User.create(name: "Lauren", color: "Purple", age: 5, avatar: "https://i.imgur.com/V0lOVy8.png")
+User.create(name: "Patrick", color: "Green", age: 4, avatar: "https://i.imgur.com/rRlxBHn.png")
+
+8.times do User.create(name: Faker::Name.unique.first_name, color: Faker::Color.color_name, age: Faker::Number.between(3, 8), avatar: avatar.sample )
 end
 
 # TESTS

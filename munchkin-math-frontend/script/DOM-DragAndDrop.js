@@ -8,7 +8,7 @@ function dragAndDropPage() {
 
   const question = document.createElement("h1");
   question.className = "question";
-  question.innerText = "How Many Apples are in the Basket?";
+  question.innerText = "How Many Apples do you see?";
   body.appendChild(question);
 
   const holderDiv = document.createElement("div");
@@ -26,17 +26,20 @@ function dragAndDropPage() {
   const answer1 = document.createElement("p");
   answer1.innerText = 5;
   answer1.dataset.id = answer1.innerText;
+  answer1.className = "answerP";
   const answer2 = document.createElement("p");
   answer2.innerText = 3;
   answer2.dataset.id = answer2.innerText;
+  answer2.className = "answerP";
   const answer3 = document.createElement("p");
   answer3.innerText = 7;
   answer3.dataset.id = answer3.innerText;
+  answer3.className = "answerP";
   const answer4 = document.createElement("p");
   answer4.innerText = 1;
   answer4.dataset.id = answer4.innerText;
+  answer4.className = "answerP";
 
-  // divQuestion.className = "empty";
   div1.className = "empty";
   div2.className = "empty";
   div3.className = "empty";

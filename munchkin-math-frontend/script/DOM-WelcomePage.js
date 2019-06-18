@@ -1,40 +1,89 @@
-const form = document.querySelector("form");
 const balloonDiv = document.querySelector(".balloonDiv");
 const body = document.querySelector("body");
 const enterSiteDiv = document.querySelector(".enterSite");
+const flexDivBody = document.querySelector("#flexDiv");
+const bodyTitle = document.querySelector(".bodyTitle");
+const bodySecondTitle = document.querySelector(".bodySecondTitle");
+const fetchUsers = () => fetch(usersUrl).then(response => response.json());
+const avatars = [
+  "https://i.imgur.com/FH0SJMM.png",
+  "https://i.imgur.com/tTpEPBa.png",
+  "https://i.imgur.com/LnDRhUl.png",
+  "https://i.imgur.com/smtuHn5.png",
+  "https://i.imgur.com/rRlxBHn.png",
+  "https://i.imgur.com/xan5sih.png",
+  "https://i.imgur.com/hzCfWht.png",
+  "https://i.imgur.com/V0lOVy8.png",
+  "https://i.imgur.com/x6P8NhG.png",
+  "https://i.imgur.com/SnKgXqk.png"
+];
 
-function sayHello() {
-  event.preventDefault();
+document.addEventListener("DOMContentLoaded", function() {
+  loginOrSignUp();
+});
 
-  const nameDiv = document.querySelector(".nameBounce");
+function loginOrSignUp() {
+  const flexDiv = document.createElement("div");
+  flexDiv.className = "flexDiv";
 
-  let splitName = event.target[0].value.split("");
+  const loginDiv = document.createElement("div");
+  loginDiv.className = "innerDiv";
+  const imgLogin = document.createElement("img");
+  imgLogin.src = "https://i.imgur.com/mXLrWxX.png";
+  imgLogin.className = "loginImg";
+  const pLogin = document.createElement("p");
+  pLogin.className = "pLoginOrSignup";
+  pLogin.innerText = "Login";
+
+  loginDiv.append(imgLogin, pLogin);
+
+  const signupDiv = document.createElement("div");
+  signupDiv.className = "innerDiv";
+  const imgSignup = document.createElement("img");
+  imgSignup.src = "https://i.imgur.com/WGWvq0q.png";
+  imgSignup.className = "loginImg";
+  const pSignup = document.createElement("p");
+  pSignup.className = "pLoginOrSignup";
+  pSignup.innerText = "Sign Up";
+
+  signupDiv.append(imgSignup, pSignup);
+  flexDiv.append(loginDiv, signupDiv);
+  flexDivBody.appendChild(flexDiv);
+
+  loginDiv.addEventListener("click", fetchThenRenderUsers);
+  signupDiv.addEventListener("click", signupPage);
+}
+
+function sayHello(user) {
+  flexDivBody.innerHTML = "";
+  bodySecondTitle.innerHTML = "";
+
+  bodySecondTitle.className += " nameBounce";
+
+  let splitName = user.name.split("");
 
   splitName.forEach(letter => {
     const span = document.createElement("span");
     span.innerText = letter;
     span.className = "letterBounce";
-    nameDiv.appendChild(span);
+    bodySecondTitle.appendChild(span);
   });
+  flyBalloon();
 
-  event.target.reset();
+  setTimeout(() => {
+    landingPage();
+  }, 9500);
 }
 
 function enterSite() {
   setTimeout(() => {
     const img = document.createElement("img");
-    img.src =
-      "https://media-private.canva.com/MACPw4r7vnc/1/screen-1.png?response-expires=Mon%2C%2017%20Jun%202019%2011%3A03%3A10%20GMT&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190617T082711Z&X-Amz-SignedHeaders=host&X-Amz-Expires=9358&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20190617%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=99924990b9e2f9f9f71e3267be2ec2731fc3ae16353f41c0937e1058fd388e62";
+    img.src = "https://i.imgur.com/3u67mk8.png";
     img.className = "enterImg";
-
-    const enterP = document.createElement("span");
-    enterP.className = "enterP";
-    enterP.innerText = "Enter Site...";
-
-    enterSiteDiv.append(img, enterP);
+    enterSiteDiv.append(img);
   }, 6000);
 }
 
 function enterPage() {
-  body.innerHTML = "";
+  landingPage();
 }
