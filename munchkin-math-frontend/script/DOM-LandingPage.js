@@ -22,7 +22,6 @@ function landingPage() {
   pictureNumbers.className = "landingPageTestPicture";
   const numbersTestDivInner = document.createElement("h4");
   numbersTestDivInner.innerText = "Numbers";
-  // numbersTestDivInner.className = "innerDiv";
   numbersTestDiv.append(pictureNumbers, numbersTestDivInner);
 
   const additionTestDiv = document.createElement("div");
@@ -32,7 +31,6 @@ function landingPage() {
   pictureAddition.className = "landingPageTestPicture";
   const additionTestDivInner = document.createElement("h4");
   additionTestDivInner.innerText = "Addition";
-  // additionTestDivInner.className = "innerDiv";
   additionTestDiv.append(pictureAddition, additionTestDivInner);
 
   const subtractionTestDiv = document.createElement("div");
@@ -42,13 +40,17 @@ function landingPage() {
   pictureSubtraction.className = "landingPageTestPicture";
   const subtractionTestDivInner = document.createElement("h4");
   subtractionTestDivInner.innerText = "Subtraction";
-  // subtractionTestDivInner.className = "innerDiv";
   subtractionTestDiv.append(pictureSubtraction, subtractionTestDivInner);
 
   flexDiv.append(numbersTestDiv, additionTestDiv, subtractionTestDiv);
   flexDivBody.appendChild(flexDiv);
 
-  // numbersTestDiv.addEventListener("click", numbersTest);
+  numbersTestDiv.addEventListener("click", () =>
+    runDragAndDropTest(
+      numbersArray[Math.floor(Math.random() * numbersArray.length)]
+    )
+  );
+
   additionTestDiv.addEventListener("click", additionTestOptions);
   subtractionTestDiv.addEventListener("click", subtractionTestOptions);
 }

@@ -1,15 +1,24 @@
 let empties;
 let fill;
 
-function dragAndDropPage() {
-  body.innerHTML = "";
+let counter = 0;
 
-  const answer = "3";
+function runDragAndDropTest(testId) {
+  console.log(`running test rumber ${testId}`);
+  currentTestId = testId;
+  getSingleTestFromServer(testId).then(dragAndDropPage);
+}
 
-  const question = document.createElement("h1");
-  question.className = "question";
-  question.innerText = "How Many Apples do you see?";
-  body.appendChild(question);
+function dragAndDropPage(test) {
+  flexDivBody.innerHTML = "";
+  bodyTitle.innerText = "";
+  bodySecondTitle.innerText = "";
+  const question = test.questions[counter];
+
+  const question1 = document.createElement("h1");
+  question1.className = "question";
+  question1.innerText = question.question;
+  flexDivBody.appendChild(question1);
 
   const holderDiv = document.createElement("div");
   holderDiv.className = "holderDiv";
@@ -24,19 +33,19 @@ function dragAndDropPage() {
   const innerDiv = document.createElement("div");
 
   const answer1 = document.createElement("p");
-  answer1.innerText = 5;
+  answer1.innerText = question.answer1;
   answer1.dataset.id = answer1.innerText;
   answer1.className = "answerP";
   const answer2 = document.createElement("p");
-  answer2.innerText = 3;
+  answer2.innerText = question.answer2;
   answer2.dataset.id = answer2.innerText;
   answer2.className = "answerP";
   const answer3 = document.createElement("p");
-  answer3.innerText = 7;
+  answer3.innerText = question.answer3;
   answer3.dataset.id = answer3.innerText;
   answer3.className = "answerP";
   const answer4 = document.createElement("p");
-  answer4.innerText = 1;
+  answer4.innerText = question.correct_answer;
   answer4.dataset.id = answer4.innerText;
   answer4.className = "answerP";
 
@@ -48,7 +57,7 @@ function dragAndDropPage() {
   innerDiv.className = "fill";
   innerDiv.draggable = true;
 
-  body.append(imageDiv, holderDiv);
+  flexDivBody.append(imageDiv, holderDiv);
   imageDiv.appendChild(divQuestion);
   holderDiv.append(div1, div2, div3, div4);
   div1.appendChild(answer1);
@@ -59,6 +68,7 @@ function dragAndDropPage() {
 
   empties = document.querySelectorAll(".empty");
   fill = document.querySelector(".fill");
+  fill.style.backgroundImage = `url(${question.image_url})`;
 
   fill.addEventListener("dragstart", dragStart);
   fill.addEventListener("dragend", dragEnd);
@@ -97,11 +107,9 @@ function dragAndDropPage() {
     this.innerText = "";
     this.append(fill);
 
-    console.log(event.target.dataset.id);
-
-    if (event.target.dataset.id === answer) {
-      body.innerHTML = "";
-      console.log("correct");
+    if (event.target.dataset.id === question.correct_answer) {
+      flexDivBody.innerHTML = "";
+      bodyTitle.innerHTML = "<h1>Nice Work!</h1>";
       const correctDiv = document.createElement("div");
       correctDiv.className = correctDiv;
       const correctImg = document.createElement("img");
@@ -109,10 +117,13 @@ function dragAndDropPage() {
         "http://www.clker.com/cliparts/2/k/n/l/C/Q/transparent-green-checkmark-md.png";
       correctImg.className = "correctImg";
       correctDiv.appendChild(correctImg);
-      body.appendChild(correctDiv);
+      flexDivBody.appendChild(correctDiv);
     } else {
-      body.innerHTML = "";
-      console.log("wrong");
+      flexDivBody.innerHTML = "";
+      bodyTitle.innerHTML = "<h1>Not Quite...</h1>";
+      bodySecondTitle.innerHTML = `<h2> The Correct Answer was ${
+        question.correct_answer
+      }.</h2>`;
       const wrongDiv = document.createElement("div");
       wrongDiv.className = wrongDiv;
       const wrongImg = document.createElement("img");
@@ -120,7 +131,24 @@ function dragAndDropPage() {
         "http://www.pngmart.com/files/3/Red-Cross-Transparent-PNG.png";
       wrongImg.className = "wrongImg";
       wrongDiv.appendChild(wrongImg);
-      body.appendChild(wrongDiv);
+      flexDivBody.appendChild(wrongDiv);
     }
+    setTimeout(() => {
+      const nextQuestion = document.createElement("button");
+      nextQuestion.className = "nextQuestionButton";
+      nextQuestion.innerText = "Continue...";
+      nextQuestion.type = "button";
+      nextQuestion.addEventListener("click", runNextQuestion);
+      flexDivBody.appendChild(nextQuestion);
+    }, 2500);
+  }
+}
+
+function runNextQuestion() {
+  if (counter >= 4) {
+    landingPage();
+  } else {
+    counter += 1;
+    runDragAndDropTest(currentTestId);
   }
 }

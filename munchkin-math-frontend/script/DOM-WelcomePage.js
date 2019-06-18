@@ -17,6 +17,12 @@ const avatars = [
   "https://i.imgur.com/x6P8NhG.png",
   "https://i.imgur.com/SnKgXqk.png"
 ];
+let currentTestId = 0;
+const easySubtractionArray = [6, 7, 8, 9, 10];
+const hardSubtractionArray = [21, 22, 23, 24, 25];
+const easyAdditionArray = [1, 2, 3, 4, 5];
+const hardAdditionArray = [16, 17, 18, 19, 20];
+const numbersArray = [11, 12, 13, 14, 15];
 
 document.addEventListener("DOMContentLoaded", function() {
   loginOrSignUp();

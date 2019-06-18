@@ -3,11 +3,12 @@ const usersUrl = `${baseUrl}users/`;
 const testsUrl = `${baseUrl}tests/`;
 const questionsUrl = `${baseUrl}questions/`;
 const getJsonData = json => json;
+let testId = 6;
 
-let questionCounter = 0;
+// let counter = 0;
 
-const GetAllTestsFromServer = () =>
-  fetch(testsUrl).then(response => response.json());
+// const getAllTestsFromServer = () =>
+//   fetch(testsUrl).then(response => response.json());
 
 function getSingleTestFromServer(testId) {
   return fetch(testsUrl + `${testId}`).then(response => response.json());
@@ -19,22 +20,22 @@ function runTest(testId) {
 
 function onNextBtnClick() {
   event.preventDefault();
-  debugger;
   questionCounter++;
   renderQuestion();
 }
 
-function renderQuestion(testObject) {
-  body.innerHTML = "";
+function renderQuestion(test) {
+  flexDivBody.innerHTML = "";
+  console.log(test);
+  const question = test.questions[counter];
+  console.log(question);
 
-  const questionObject = testObject.questions[questionCounter];
-
-  const questionCard = document.createElement("div");
-
-  const questionDiv = document.createElement("div");
-  questionDiv.innerHTML = `<h3> ${questionObject.question} </h3> <img src= ${
-    questionObject.image_url
-  }>`;
+  // const questionCard = document.createElement("div");
+  //
+  // const questionDiv = document.createElement("div");
+  // questionDiv.innerHTML = `<h3> ${questionObject.question} </h3> <img src= ${
+  //   questionObject.image_url
+  // }>`;
 
   const answersDiv = document.createElement("div");
 
@@ -60,60 +61,3 @@ function renderQuestion(testObject) {
 
   body.append(questionCard);
 }
-
-//
-// function fetchThenRenderTestQuestion() {
-//   return fetchTestsData()
-//     .then(getJsonData)
-//     .then(renderQuestions);
-// }
-//
-// function addToPage(question) {
-//   const divy = document.createElement("div");
-//   const pp = document.createElement("p");
-//   pp.innerText = question;
-//   body.appendChild(divy);
-//   divy.appendChild(pp);
-//   return divy;
-// }
-//
-
-// function renderQuestion(filterTests) {
-//   filterTests.forEach(question => {
-//     body.appendChild(addToPage(question));
-//   });
-// }
-//
-// function displayTestQuestion(testName) {
-//   fetchTestsData().then(json => {
-//     tests = json.slice(0);
-//     let filterTests = tests.filter(test => test.name === testName);
-//     renderQuestion(filterTests);
-//   });
-// }
-//
-// function renderQuestions(json) {
-//   // return data.find(data => data.name === testName);
-//   json.forEach(test => {
-//     test.questions.forEach(question => {
-//       const pp = document.createElement("p");
-//       pp.innerText = question.question;
-//       body.appendChild(pp);
-//     });
-//   });
-// }
-//
-// function fetchThenRenderTestQuestion() {
-//   return fetchTestsData()
-//     .then(getJsonData)
-//     .then(renderQuestions);
-// }
-
-// function addToPage(question) {
-//   const divy = document.createElement("div");
-//   const pp = document.createElement("p");
-//   pp.innerText = question;
-//   body.appendChild(divy);
-//   divy.appendChild(pp);
-//   return divy;
-// }

@@ -25,8 +25,16 @@ function additionTestOptions() {
 
   flexDiv.append(easyDiv, hardDiv);
 
-  easyDiv.addEventListener("click", easyAdditionTest);
-  hardDiv.addEventListener("click", hardAdditionTest);
+  easyDiv.addEventListener("click", () =>
+    easyAdditionTest(
+      easyAdditionArray[Math.floor(Math.random() * easyAdditionArray.length)]
+    )
+  );
+  hardDiv.addEventListener("click", () =>
+    hardAdditionTest(
+      hardAdditionArray[Math.floor(Math.random() * hardAdditionArray.length)]
+    )
+  );
 }
 
 function subtractionTestOptions() {
@@ -56,6 +64,18 @@ function subtractionTestOptions() {
 
   flexDiv.append(easyDiv, hardDiv);
 
-  easyDiv.addEventListener("click", easySubtractionTest);
-  hardDiv.addEventListener("click", hardSubtractionTest);
+  easyDiv.addEventListener("click", () =>
+    easySubtractionTest(
+      easySubtractionArray[
+        Math.floor(Math.random() * easySubtractionArray.length)
+      ]
+    )
+  );
+  hardDiv.addEventListener("click", () =>
+    hardSubtractionTest(
+      hardSubtractionArray[
+        Math.floor(Math.random() * hardSubtractionArray.length)
+      ]
+    )
+  );
 }

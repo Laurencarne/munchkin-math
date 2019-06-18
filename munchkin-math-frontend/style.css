@@ -431,6 +431,7 @@ h2 {
 }
 
 .correctDiv {
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -442,7 +443,7 @@ h2 {
 }
 
 .correctImg {
-  height: 40em;
+  height: 90px;
   width: auto;
   border-width: 0;
   color: whitesmoke;
@@ -457,7 +458,7 @@ h2 {
 .wrongImg {
   display: flex;
   justify-content: center;
-  height: 40em;
+  height: 90px;
   width: auto;
   align-content: center;
   animation-timing-function: ease-in-out;
@@ -477,6 +478,20 @@ h2 {
   100% {
     transform: scale(1);
   }
+}
+
+.nextQuestionButton {
+  background-color: orange;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  border-color: white;
+}
+
+.nextQuestionButton:hover {
+  background-color: whitesmoke;
+  border: whitesmoke solid 1px;
+  color: orange;
 }
 
 /* WELCOME PAGE */
