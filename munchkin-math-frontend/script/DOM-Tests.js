@@ -127,7 +127,7 @@ function checkAnswer(answer) {
   if (answer === correctAnswer) {
     flexDivBody.innerHTML = "";
     testScore++;
-    bodyTitle.innerHTML = `<h1>Nice Work!</h1>`;
+    bodyTitle.innerHTML = `<h1>Nice Work ${currentUser.name}!</h1>`;
     bodySecondTitle.innerHTML = `<h2> The correct answer is ${correctAnswer}`;
     const correctDiv = document.createElement("div");
     correctDiv.className = correctDiv;
@@ -162,6 +162,7 @@ function checkAnswer(answer) {
 
 function runNextQuestion() {
   if (counter >= 4) {
+    makeUserTest();
     landingPage();
   } else {
     counter += 1;
@@ -171,7 +172,7 @@ function runNextQuestion() {
 
 function makeUserTest() {
   const newUserTest = {
-    user_id: 1,
+    user_id: currentUser.id,
     test_id: currentTestId,
     score: testScore
   };

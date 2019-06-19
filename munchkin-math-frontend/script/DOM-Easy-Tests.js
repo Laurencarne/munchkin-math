@@ -82,7 +82,9 @@ function checkAnswer(answer) {
     flexDivBody.innerHTML = "";
     testScore += 1;
     debugger;
-    bodyTitle.innerHTML = `<h1>Nice Work!</h1> <br> <h2> The correct answer is ${correctAnswer}`;
+    bodyTitle.innerHTML = `<h1>Nice Work ${
+      currentUser.name
+    }!</h1> <br> <h2> The correct answer is ${correctAnswer}`;
     const correctDiv = document.createElement("div");
     correctDiv.className = correctDiv;
     const correctImg = document.createElement("img");
