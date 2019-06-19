@@ -38,6 +38,7 @@ function loginOrSignUp() {
 function sayHello(user) {
   currentPage = "Balloons";
   currentUser = user;
+  avatarNav.src = user.avatar;
   flexDiv.innerText = "";
   bodySecondTitle.innerHTML = "";
 

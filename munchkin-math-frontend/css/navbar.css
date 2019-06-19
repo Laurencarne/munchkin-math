@@ -18,7 +18,7 @@ li a {
   display: block;
   color: orange;
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
   text-decoration: none;
 }
 
@@ -61,4 +61,19 @@ div.pullUpDown a:hover:before,
 div.pullUpDown a:hover:after {
   height: 100%;
   border-radius: 100%;
+}
+
+div.container a.firstNav {
+  padding: 0;
+}
+
+.avatar {
+  margin: 0;
+  padding: 2px;
+  height: 35px;
+  width: auto;
+}
+
+.hide {
+  display: none;
 }

@@ -1,5 +1,5 @@
 const balloonDiv = document.querySelector(".balloonDiv");
-const body = document.querySelector("body");
+// const body = document.querySelector("body");
 const flexDivBody = document.querySelector("#flexDiv");
 const bodyTitle = document.querySelector(".bodyTitle");
 const bodySecondTitle = document.querySelector(".bodySecondTitle");
@@ -37,3 +37,9 @@ let fill;
 let counter = 0;
 let currentPage = "";
 let currentUser = null;
+let testScore = 0;
+
+const avatarNav = document.querySelector(".avatar");
+const logoutNav = document.querySelector(".logout");
+const goBackNav = document.querySelector(".back");
+const homeNav = document.querySelector(".home");
