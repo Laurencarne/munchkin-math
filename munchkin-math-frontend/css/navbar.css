@@ -1,0 +1,64 @@
+html,
+body {
+  margin: 0;
+}
+.navBar {
+  overflow: hidden;
+  margin: 1% 10% 0% 10%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: orange;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+div.container a {
+  color: #fff;
+  text-decoration: none;
+  font: 20px;
+  margin: 10px 10px 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  font-family: "Mali", cursive;
+}
+
+div.pullUpDown a:before,
+div.pullUpDown a:after {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0px;
+  content: "";
+  background: #fff;
+  opacity: 0.3;
+  transition: all 0.3s;
+  border-radius: 100%;
+}
+
+div.pullUpDown a:before {
+  top: 0px;
+  border-radius: 100%;
+}
+
+div.pullUpDown a:after {
+  bottom: 0px;
+  border-radius: 100%;
+}
+
+div.pullUpDown a:hover:before,
+div.pullUpDown a:hover:after {
+  height: 100%;
+  border-radius: 100%;
+}

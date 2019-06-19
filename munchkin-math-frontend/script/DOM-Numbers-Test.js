@@ -1,4 +1,5 @@
 function runDragAndDropTest(testId) {
+  currentPage = "InsideTest";
   getSingleTestFromServer(testId).then(dragAndDropPage);
 }
 

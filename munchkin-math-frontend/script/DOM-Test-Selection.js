@@ -1,4 +1,5 @@
 function additionTestOptions() {
+  currentPage = "TestOptions";
   const flexDiv = document.querySelector(".flexDiv");
   flexDiv.innerHTML = "";
 
@@ -30,6 +31,7 @@ function additionTestOptions() {
 }
 
 function subtractionTestOptions() {
+  currentPage = "TestOptions";
   const flexDiv = document.querySelector(".flexDiv");
   flexDiv.innerHTML = "";
 
