@@ -1,6 +1,6 @@
 function landingPage() {
   counter = 0;
-
+  testScore = 0;
   flexDivBody.innerHTML = "";
   bodySecondTitle.className -= " nameBounce";
   bodySecondTitle.innerHTML = "";

@@ -1,5 +1,5 @@
 counter = 0;
-
+testScore = 0;
 function getTest(testId) {
   currentTestId = testId;
   getSingleTestFromServer(testId).then(runTest);
@@ -79,6 +79,7 @@ function submitAnswer() {
 function checkAnswer(answer) {
   if (answer === correctAnswer) {
     flexDivBody.innerHTML = "";
+    testScore++;
     bodyTitle.innerHTML = `<h1>Nice Work!</h1> <br> <h2> The correct answer is ${correctAnswer}`;
     const correctDiv = document.createElement("div");
     correctDiv.className = correctDiv;
@@ -113,9 +114,31 @@ function checkAnswer(answer) {
 
 function runNextQuestion() {
   if (counter >= 4) {
+    // Creating a new UserTest in database with userId, TestId and score
+    makeUserTest();
     landingPage();
   } else {
     counter += 1;
     getTest(currentTestId);
   }
+}
+
+function makeUserTest() {
+  const newUserTest = {
+    user_id: 1,
+    test_id: currentTestId,
+    score: testScore
+  };
+  debugger;
+  addUserTestToServer(newUserTest);
+}
+
+function addUserTestToServer(UserTestObject) {
+  return fetch(userTestsUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(UserTestObject)
+  });
 }
