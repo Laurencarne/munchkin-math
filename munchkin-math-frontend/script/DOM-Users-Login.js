@@ -33,5 +33,6 @@ function renderUsers(json) {
 }
 
 function fetchThenRenderUsers() {
+  currentPage = "UserLogin";
   fetchUsers().then(renderUsers);
 }

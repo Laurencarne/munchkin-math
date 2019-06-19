@@ -1,8 +1,9 @@
 function landingPage() {
+  currentPage = "LandingPage";
   counter = 0;
   testScore = 0;
   flexDivBody.innerHTML = "";
-  bodySecondTitle.className -= " nameBounce";
+  // bodySecondTitle.classList.remove(nameBounce);
   bodySecondTitle.innerHTML = "";
   bodyTitle.innerHTML = "";
 

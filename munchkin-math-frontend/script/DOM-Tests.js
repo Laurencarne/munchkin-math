@@ -2,6 +2,7 @@ counter = 0;
 testScore = 0;
 
 function getTest(testId) {
+  currentPage = "InsideTest";
   currentTestId = testId;
   getSingleTestFromServer(testId).then(runTest);
 }

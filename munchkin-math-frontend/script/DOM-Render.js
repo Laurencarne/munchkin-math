@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const baseUrl = "http://localhost:3000/";
 const usersUrl = `${baseUrl}users/`;
 const testsUrl = `${baseUrl}tests/`;
@@ -8,6 +9,8 @@ const getJsonData = json => json;
 
 // let counter = 0;
 
+=======
+>>>>>>> db45fadf131f8d3bd28361398eecf52bbc3a3892
 // const getAllTestsFromServer = () =>
 //   fetch(testsUrl).then(response => response.json());
 

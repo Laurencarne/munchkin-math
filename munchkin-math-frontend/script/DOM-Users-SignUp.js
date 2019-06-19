@@ -1,4 +1,5 @@
 function signupPage() {
+  currentPage = "UserSignup";
   flexDivBody.innerHTML = "";
 
   const h2 = document.createElement("h2");

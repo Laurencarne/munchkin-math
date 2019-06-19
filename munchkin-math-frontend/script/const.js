@@ -4,6 +4,14 @@ const flexDivBody = document.querySelector("#flexDiv");
 const bodyTitle = document.querySelector(".bodyTitle");
 const bodySecondTitle = document.querySelector(".bodySecondTitle");
 const fetchUsers = () => fetch(usersUrl).then(response => response.json());
+
+const baseUrl = "http://localhost:3000/";
+const usersUrl = `${baseUrl}users/`;
+const testsUrl = `${baseUrl}tests/`;
+const questionsUrl = `${baseUrl}questions/`;
+const getJsonData = json => json;
+// let testId = 0;
+
 const avatars = [
   "https://i.imgur.com/FH0SJMM.png",
   "https://i.imgur.com/tTpEPBa.png",
@@ -26,3 +34,5 @@ const numbersArray = [11, 12, 13, 14, 15];
 let empties;
 let fill;
 let counter = 0;
+let currentPage = "";
+let currentUser = null;

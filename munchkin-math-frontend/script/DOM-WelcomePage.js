@@ -35,6 +35,8 @@ function loginOrSignUp() {
 }
 
 function sayHello(user) {
+  currentPage = "Balloons";
+  currentUser = user;
   flexDivBody.innerHTML = "";
   bodySecondTitle.innerHTML = "";
 
