@@ -163,7 +163,10 @@ function checkAnswer(answer) {
 function runNextQuestion() {
   if (counter >= 4) {
     makeUserTest();
-    landingPage();
+    displayScorePage();
+    setTimeout(() => {
+      landingPage();
+    }, 3000);
   } else {
     counter += 1;
     getTest(currentTestId);
@@ -187,5 +190,5 @@ function addUserTestToServer(UserTestObject) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(UserTestObject)
-  });
+  }).then(resp => resp.json());
 }
