@@ -1,13 +1,3 @@
-const baseUrl = "http://localhost:3000/";
-const usersUrl = `${baseUrl}users/`;
-const testsUrl = `${baseUrl}tests/`;
-const questionsUrl = `${baseUrl}questions/`;
-const userTestsUrl = `${baseUrl}user_tests/`;
-const getJsonData = json => json;
-let testId = 6;
-
-// let counter = 0;
-
 // const getAllTestsFromServer = () =>
 //   fetch(testsUrl).then(response => response.json());
 
