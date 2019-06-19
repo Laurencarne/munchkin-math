@@ -24,4 +24,14 @@ class UserTestsController < ApplicationController
           }
         ]
     end
+
+      def create
+        newUserTest = UserTest.create(userTest_params)
+        render json: newUserTest
+      end
+
+      def userTest_params
+        params.require(:user_id, :test_id, :score)
+        # , :user_id, :test_id, :score
+      end
 end
