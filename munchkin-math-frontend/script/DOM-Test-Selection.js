@@ -66,6 +66,7 @@ function setTestIdAndRun() {
   if (testTarget === "Numbers") {
     currentTestId =
       numbersArray[Math.floor(Math.random() * numbersArray.length)];
+    runDragAndDropTest(currentTestId);
   } else if (testTarget === "Addition - Level One") {
     currentTestId =
       easyAdditionArray[Math.floor(Math.random() * easyAdditionArray.length)];
@@ -73,6 +74,7 @@ function setTestIdAndRun() {
   } else if (testTarget === "Addition - Level Two") {
     currentTestId =
       hardAdditionArray[Math.floor(Math.random() * hardAdditionArray.length)];
+    getTest(currentTestId);
   } else if (testTarget === "Subtraction - Level One") {
     currentTestId =
       easySubtractionArray[
@@ -84,5 +86,6 @@ function setTestIdAndRun() {
       hardSubtractionArray[
         Math.floor(Math.random() * hardSubtractionArray.length)
       ];
+    getTest(currentTestId);
   }
 }

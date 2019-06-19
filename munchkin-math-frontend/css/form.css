@@ -44,6 +44,7 @@
   font-size: 12px;
   font-family: "Mali", cursive;
   box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+  margin: 10px;
 }
 
 .submit-box:hover {
