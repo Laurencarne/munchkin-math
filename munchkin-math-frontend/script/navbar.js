@@ -1,10 +1,9 @@
 function home() {
-  loginOrSignUp();
+  landingPage();
 }
 
 function goBack() {
   if (currentPage === "LandingPage") {
-    // Do nothing
   } else if (currentPage === "InsideTest" || currentPage === "TestOptions") {
     landingPage();
   } else if (currentPage === "UserLogin" || currentPage === "UserSignup") {
@@ -17,7 +16,7 @@ function goBack() {
 function logout() {
   currentUser = null;
   avatarNav.src = "https://i.imgur.com/QbymuiR.png";
-  flexDiv.innerText = "";
+  flexDivBody.innerText = "";
   bodySecondTitle.innerHTML = "";
   bodyTitle.innerHTML = "<h1> You have been logged Out</h1>";
   setTimeout(() => {

@@ -1,36 +1,28 @@
 function signupPage() {
   currentPage = "UserSignup";
   flexDivBody.innerHTML = "";
+  createSubHeading("Lets Be Friends!");
 
-  const h2 = document.createElement("h2");
-  h2.innerText = "Lets Be Friends!";
-  bodySecondTitle.appendChild(h2);
+  const form = createElement("form", "input");
 
-  const form = document.createElement("form");
-  form.className = "input";
-
-  const inputName = document.createElement("input");
+  const inputName = createElement("input", "input-box");
   inputName.type = "text";
   inputName.name = "Name";
   inputName.placeholder = "What is Your Name?";
-  inputName.className = "input-box";
 
-  const inputAge = document.createElement("input");
+  const inputAge = createElement("input", "input-box");
   inputAge.type = "text";
   inputAge.name = "Age";
   inputAge.placeholder = "How Old Are You?";
-  inputAge.className = "input-box";
 
-  const submit = document.createElement("input");
+  const submit = createElement("input", "submit-box");
   submit.type = "submit";
   submit.name = "Submit";
   submit.value = "Let's Play!";
-  submit.className = "submit-box";
 
   form.addEventListener("submit", makeUser);
 
-  const imageHolderDiv = document.createElement("div");
-  imageHolderDiv.className = "imageHolderDiv";
+  const imageHolderDiv = createElement("div", "imageHolderDiv");
 
   avatars.forEach(image => {
     imageHolderDiv.appendChild(displayUserAvatars(image));
@@ -42,14 +34,9 @@ function signupPage() {
 }
 
 function displayUserAvatars(image) {
-  const innerDiv = document.createElement("div");
-  innerDiv.className = "miniInnerDiv";
+  const innerDiv = createElement("div", "miniInnerDiv");
 
-  const img = document.createElement("img");
-  img.className = "miniUserAvatarImg";
-  img.src = image;
-
-  innerDiv.append(img);
+  innerDiv.append(createImage(image, "miniUserAvatarImg"));
 
   innerDiv.addEventListener("click", () => chooseAvatar(image));
 
@@ -58,6 +45,7 @@ function displayUserAvatars(image) {
 
 function chooseAvatar(image) {
   const form = document.querySelector(".input");
+
   let eventsArray = document.querySelectorAll(".miniInnerDiv");
   let arrayList = [];
   let newArray = [];
@@ -77,28 +65,4 @@ function chooseAvatar(image) {
     }
   }
   form.dataset.url = image;
-}
-
-function makeUser() {
-  event.preventDefault();
-
-  const newUser = {
-    name: event.target[0].value,
-    age: event.target[1].value,
-    avatar: event.target.dataset.url,
-    color: ""
-  };
-  addUserToServer(newUser).then(sayHello);
-
-  event.target.reset();
-}
-
-function addUserToServer(user) {
-  return fetch(usersUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(user)
-  }).then(resp => resp.json());
 }

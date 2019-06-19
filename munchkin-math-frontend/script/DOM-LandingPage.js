@@ -2,55 +2,38 @@ function landingPage() {
   logoutNav.classList.remove("hide");
   goBackNav.classList.remove("hide");
   homeNav.classList.remove("hide");
+
   currentPage = "LandingPage";
   counter = 0;
   testScore = 0;
-  flexDivBody.innerHTML = "";
-  bodySecondTitle.innerHTML = "";
-  bodyTitle.innerHTML = "";
 
-  const h1 = document.createElement("h1");
-  h1.innerText = "Munchkin Math";
-  bodyTitle.appendChild(h1);
+  resetPage();
+  createHeader("Munchkin Math");
+  createSubHeading("Select Today's Test");
 
-  const h2 = document.createElement("h2");
-  h2.innerText = "Select Today's Test";
-  bodySecondTitle.appendChild(h2);
+  const numbersTestDiv = createElement("div", "innerDiv");
+  numbersTestDiv.append(
+    createImage("https://i.imgur.com/WqiJEuY.png", "landingPageTestPicture"),
+    "Numbers"
+  );
 
-  const flexDiv = document.createElement("div");
-  flexDiv.className = "flexDiv";
+  const additionTestDiv = createElement("div", "innerDiv");
+  additionTestDiv.append(
+    createImage("https://i.imgur.com/v8bB57y.png", "landingPageTestPicture"),
+    "Addition"
+  );
 
-  const numbersTestDiv = document.createElement("div");
-  numbersTestDiv.className = "innerDiv";
-  const pictureNumbers = document.createElement("img");
-  pictureNumbers.src = "https://i.imgur.com/WqiJEuY.png";
-  pictureNumbers.className = "landingPageTestPicture";
-  const numbersTestDivInner = document.createElement("h4");
-  numbersTestDivInner.innerText = "Numbers";
-  numbersTestDiv.append(pictureNumbers, numbersTestDivInner);
+  const subtractionTestDiv = createElement("div", "innerDiv");
+  subtractionTestDiv.append(
+    createImage("https://i.imgur.com/7T3wwK8.png", "landingPageTestPicture"),
+    "Subtraction"
+  );
 
-  const additionTestDiv = document.createElement("div");
-  additionTestDiv.className = "innerDiv";
-  const pictureAddition = document.createElement("img");
-  pictureAddition.src = "https://i.imgur.com/v8bB57y.png";
-  pictureAddition.className = "landingPageTestPicture";
-  const additionTestDivInner = document.createElement("h4");
-  additionTestDivInner.innerText = "Addition";
-  additionTestDiv.append(pictureAddition, additionTestDivInner);
-
-  const subtractionTestDiv = document.createElement("div");
-  subtractionTestDiv.className = "innerDiv";
-  const pictureSubtraction = document.createElement("img");
-  pictureSubtraction.src = "https://i.imgur.com/7T3wwK8.png";
-  pictureSubtraction.className = "landingPageTestPicture";
-  const subtractionTestDivInner = document.createElement("h4");
-  subtractionTestDivInner.innerText = "Subtraction";
-  subtractionTestDiv.append(pictureSubtraction, subtractionTestDivInner);
-
-  flexDiv.append(numbersTestDiv, additionTestDiv, subtractionTestDiv);
-  flexDivBody.appendChild(flexDiv);
+  flexDivBody.append(numbersTestDiv, additionTestDiv, subtractionTestDiv);
 
   numbersTestDiv.addEventListener("click", setTestIdAndRun);
-  additionTestDiv.addEventListener("click", additionTestOptions);
-  subtractionTestDiv.addEventListener("click", subtractionTestOptions);
+  additionTestDiv.addEventListener("click", () => testOptions("Addition"));
+  subtractionTestDiv.addEventListener("click", () =>
+    testOptions("Subtraction")
+  );
 }

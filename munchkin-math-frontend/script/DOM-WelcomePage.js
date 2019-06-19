@@ -3,33 +3,24 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function loginOrSignUp() {
-  // const flexDiv = document.querySelector(".flexDiv");
-  flexDiv.innerText = "";
-  bodyTitle.innerHTML = "<h1>Welcome Munchkin</h1>";
-  bodySecondTitle.innerText = "";
+  resetPage();
+  createHeader("Welcome Munchkin");
 
-  const loginDiv = document.createElement("div");
-  loginDiv.className = "innerDiv";
-  const imgLogin = document.createElement("img");
-  imgLogin.src = "https://i.imgur.com/mXLrWxX.png";
-  imgLogin.className = "loginImg";
-  const pLogin = document.createElement("p");
-  pLogin.className = "pLoginOrSignup";
-  pLogin.innerText = "Login";
+  const loginDiv = createElement("div", "innerDiv");
 
-  loginDiv.append(imgLogin, pLogin);
+  loginDiv.append(
+    createImage("https://i.imgur.com/mXLrWxX.png", "loginImg"),
+    createElement("p", "pLoginOrSignup", "Login")
+  );
 
-  const signupDiv = document.createElement("div");
-  signupDiv.className = "innerDiv";
-  const imgSignup = document.createElement("img");
-  imgSignup.src = "https://i.imgur.com/WGWvq0q.png";
-  imgSignup.className = "loginImg";
-  const pSignup = document.createElement("p");
-  pSignup.className = "pLoginOrSignup";
-  pSignup.innerText = "Sign Up";
+  const signupDiv = createElement("div", "innerDiv");
 
-  signupDiv.append(imgSignup, pSignup);
-  flexDiv.append(loginDiv, signupDiv);
+  signupDiv.append(
+    createImage("https://i.imgur.com/WGWvq0q.png", "loginImg"),
+    createElement("p", "pLoginOrSignup", "Sign Up")
+  );
+
+  flexDivBody.append(loginDiv, signupDiv);
 
   loginDiv.addEventListener("click", fetchThenRenderUsers);
   signupDiv.addEventListener("click", signupPage);
@@ -39,9 +30,8 @@ function sayHello(user) {
   currentPage = "Balloons";
   currentUser = user;
   avatarNav.src = user.avatar;
-  flexDiv.innerText = "";
-  bodySecondTitle.innerHTML = "";
 
+  resetPage();
   bodySecondTitle.className += " nameBounce";
 
   let splitName = user.name.split("");

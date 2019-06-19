@@ -6,39 +6,55 @@ function runTest(testId) {
   getSingleTestFromServer(testId).then(renderQuestion);
 }
 
-function onNextBtnClick() {
-  event.preventDefault();
-  questionCounter++;
-  renderQuestion();
+function makeUserTest() {
+  const newUserTest = {
+    user_id: currentUser.id,
+    test_id: currentTestId,
+    score: testScore
+  };
+  addUserTestToServer(newUserTest);
 }
 
-function renderQuestion(test) {
-  flexDivBody.innerHTML = "";
-  console.log(test);
-  const question = test.questions[counter];
-  console.log(question);
+function addUserTestToServer(userTestObject) {
+  return fetch(userTestsUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userTestObject)
+  });
+}
 
-  const answersDiv = document.createElement("div");
+function makeUser() {
+  event.preventDefault();
 
-  const answerA = document.createElement("div");
-  answerA.innerText = questionObject.correct_answer;
+  const newUser = {
+    name: event.target[0].value,
+    age: event.target[1].value,
+    avatar: event.target.dataset.url,
+    color: ""
+  };
+  addUserToServer(newUser).then(sayHello);
 
-  const answerB = document.createElement("div");
-  answerB.innerText = questionObject.answer1;
+  event.target.reset();
+}
 
-  const answerC = document.createElement("div");
-  answerC.innerText = questionObject.answer2;
+function addUserToServer(user) {
+  return fetch(usersUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(user)
+  }).then(resp => resp.json());
+}
 
-  const answerD = document.createElement("div");
-  answerD.innerText = questionObject.answer3;
+function getAllUserTestsFromServer() {
+  return fetch(userTestsUrl).then(response => response.json());
+}
 
-  answersDiv.append(answerA, answerB, answerC, answerD);
-
-  const nextBtn = document.createElement("button");
-  nextBtn.innerText = "Next Question";
-  nextBtn.addEventListener("click", onNextBtnClick);
-
-  questionCard.append(questionDiv, answersDiv, nextBtn);
-
-  body.append(questionCard);
+function getUserTestFromServer(UserTestId) {
+  return fetch(userTestsUrl + `${UserTestId}`).then(response =>
+    response.json()
+  );
 }
