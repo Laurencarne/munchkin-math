@@ -62,7 +62,7 @@ additionQ16 = Question.create(test_id: 4, number: 1, question: "What does 1 + 9 
 additionQ17 = Question.create(test_id: 4, number: 2, question: "What does 2 + 8 equal?", correct_answer: "10", answer1: "5", answer2: "9", answer3: "12", image_url: "")
 additionQ18 = Question.create(test_id: 4, number: 3, question: "What does 3 + 3 equal?", correct_answer: "6", answer1: "5", answer2: "0", answer3: "11", image_url: "")
 additionQ19 = Question.create(test_id: 4, number: 4, question: "What does 4 + 4 equal?", correct_answer: "8", answer1: "22", answer2: "13", answer3: "14", image_url: "")
-additionQ20 = Question.create(test_id: 4, number: 5, question: "What does 2 + 10 equal?", correct_answer: "11", answer1: "2", answer2: "3", answer3: "6", image_url: "")
+additionQ20 = Question.create(test_id: 4, number: 5, question: "What does 2 + 10 equal?", correct_answer: "12", answer1: "2", answer2: "3", answer3: "6", image_url: "")
 
 additionQ21 = Question.create(test_id: 5, number: 1, question: "What does 10 + 3 equal?", correct_answer: "13", answer1: "4", answer2: "9", answer3: "17", image_url: "")
 additionQ22 = Question.create(test_id: 5, number: 2, question: "What does 11 + 4 equal?", correct_answer: "15", answer1: "10", answer2: "5", answer3: "12", image_url: "")
