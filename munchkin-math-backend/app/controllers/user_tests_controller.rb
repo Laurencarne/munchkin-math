@@ -31,7 +31,7 @@ class UserTestsController < ApplicationController
       end
 
       def userTest_params
-        params.require(:user_id, :test_id, :score)
+        params.require(:user_test).permit(:user_id, :test_id, :score)
         # , :user_id, :test_id, :score
       end
 end

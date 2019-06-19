@@ -1,4 +1,5 @@
 counter = 0;
+testScore = 0;
 
 function getTest(testId) {
   currentPage = "InsideTest";
@@ -125,6 +126,7 @@ function submitAnswerHard(test) {
 function checkAnswer(answer) {
   if (answer === correctAnswer) {
     flexDivBody.innerHTML = "";
+    testScore++;
     bodyTitle.innerHTML = `<h1>Nice Work!</h1>`;
     bodySecondTitle.innerHTML = `<h2> The correct answer is ${correctAnswer}`;
     const correctDiv = document.createElement("div");
@@ -165,4 +167,24 @@ function runNextQuestion() {
     counter += 1;
     getTest(currentTestId);
   }
+}
+
+function makeUserTest() {
+  const newUserTest = {
+    user_id: 1,
+    test_id: currentTestId,
+    score: testScore
+  };
+  debugger;
+  addUserTestToServer(newUserTest);
+}
+
+function addUserTestToServer(UserTestObject) {
+  return fetch(userTestsUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(UserTestObject)
+  });
 }

@@ -1,5 +1,6 @@
 counter = 0;
 testScore = 0;
+
 function getTest(testId) {
   currentTestId = testId;
   getSingleTestFromServer(testId).then(runTest);
@@ -79,7 +80,8 @@ function submitAnswer() {
 function checkAnswer(answer) {
   if (answer === correctAnswer) {
     flexDivBody.innerHTML = "";
-    testScore++;
+    testScore += 1;
+    debugger;
     bodyTitle.innerHTML = `<h1>Nice Work!</h1> <br> <h2> The correct answer is ${correctAnswer}`;
     const correctDiv = document.createElement("div");
     correctDiv.className = correctDiv;
