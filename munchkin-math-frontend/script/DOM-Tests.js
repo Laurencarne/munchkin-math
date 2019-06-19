@@ -1,6 +1,3 @@
-counter = 0;
-testScore = 0;
-
 function getTest(testId) {
   currentPage = "InsideTest";
   currentTestId = testId;
@@ -65,11 +62,20 @@ function runTest(test) {
     answer4.dataset.correct = question.correct_answer;
     answer4.className = "answerP";
 
-    holderDiv.append(div1, div2, div3, div4);
     div1.appendChild(answer1);
     div2.appendChild(answer2);
     div3.appendChild(answer3);
     div4.appendChild(answer4);
+
+    let arr = [div1, div2, div3, div4];
+    let num = 0;
+
+    while (arr.length > 0) {
+      num = arr[Math.floor(Math.random() * arr.length)] - 1;
+      indexNum = arr.indexOf(num);
+      holderDiv.append(arr.splice(indexNum, 1)[0]);
+    }
+    //
   } else if (currentTestId >= 16 && currentTestId <= 25) {
     if (currentTestId >= 16 && currentTestId <= 20) {
       bodyTitle.innerHTML = `<h1 style="color: #4dc0b5;">Addition</h1>`;
@@ -176,16 +182,15 @@ function makeUserTest() {
     test_id: currentTestId,
     score: testScore
   };
-  debugger;
   addUserTestToServer(newUserTest);
 }
 
-function addUserTestToServer(UserTestObject) {
+function addUserTestToServer(userTestObject) {
   return fetch(userTestsUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(UserTestObject)
+    body: JSON.stringify(userTestObject)
   });
 }

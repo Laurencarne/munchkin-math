@@ -23,16 +23,20 @@
   <body>
     <div class="navBar pullUpDown container">
       <ul>
-        <li onclick="userProfile()" class="avatar">
-          <a><i class="fas fa-school"></i></a>
+        <li onclick="userProfile()">
+          <a class="firstNav">
+            <img src="https://i.imgur.com/QbymuiR.png" alt="" class="avatar" />
+          </a>
         </li>
-        <li onclick="logout()" style="float:right" class="logout">
+        <li onclick="logout()" style="float:right" class="logout hide">
           <a>Logout</a>
         </li>
-        <li onclick="goBack()" style="float:right" class="back">
+        <li onclick="goBack()" style="float:right" class="back hide">
           <a>Go Back</a>
         </li>
-        <li onclick="home()" style="float:right" class="home"><a>Home</a></li>
+        <li onclick="home()" style="float:right" class="home hide">
+          <a>Home</a>
+        </li>
       </ul>
     </div>
     <div class="bodyTitle"></div>
