@@ -123,10 +123,7 @@ function dragAndDropPage(test) {
         "Continue..."
       );
       nextQuestion.type = "button";
-      nextQuestion.addEventListener(
-        "click",
-        runNextQuestion(runDragAndDropTest(currentTestId))
-      );
+      nextQuestion.addEventListener("click", runNextQuestionDrag);
       flexDivBody.appendChild(nextQuestion);
     }, 2500);
   }

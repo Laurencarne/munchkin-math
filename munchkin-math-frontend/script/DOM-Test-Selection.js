@@ -53,15 +53,15 @@ function setTestIdAndRun() {
   }
 }
 
-// function runNextQuestionDrag() {
-//   if (counter >= 4) {
-//     makeUserTest();
-//     displayScorePage();
-//     setTimeout(() => {
-//       landingPage();
-//     }, 3000);
-//   } else {
-//     counter += 1;
-//     runDragAndDropTest(currentTestId);
-//   }
-// }
+function runNextQuestionDrag() {
+  if (counter >= 4) {
+    makeUserTest();
+    displayScorePage();
+    setTimeout(() => {
+      landingPage();
+    }, 3000);
+  } else {
+    counter += 1;
+    runDragAndDropTest(currentTestId);
+  }
+}

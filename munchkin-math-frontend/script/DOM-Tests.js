@@ -133,28 +133,12 @@ function checkAnswer(answer, correctAnswer) {
       "Continue..."
     );
     nextQuestion.type = "button";
-    nextQuestion.addEventListener(
-      "click",
-      runNextQuestion(getTest(currentTestId))
-    );
+    nextQuestion.addEventListener("click", runNextQuestion);
     flexDivBody.appendChild(nextQuestion);
   }, 2500);
 }
 
-function runNextQuestion(functionCall) {
-  if (counter >= 4) {
-    makeUserTest();
-    displayScorePage();
-    setTimeout(() => {
-      landingPage();
-    }, 3000);
-  } else {
-    counter += 1;
-    functionCall;
-  }
-}
-
-// function runNextQuestion() {
+// function runNextQuestion(functionCall) {
 //   if (counter >= 4) {
 //     makeUserTest();
 //     displayScorePage();
@@ -163,6 +147,19 @@ function runNextQuestion(functionCall) {
 //     }, 3000);
 //   } else {
 //     counter += 1;
-//     getTest(currentTestId);
+//     functionCall;
 //   }
 // }
+
+function runNextQuestion() {
+  if (counter >= 4) {
+    makeUserTest();
+    displayScorePage();
+    setTimeout(() => {
+      landingPage();
+    }, 3000);
+  } else {
+    counter += 1;
+    getTest(currentTestId);
+  }
+}
