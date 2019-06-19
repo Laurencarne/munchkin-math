@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function loginOrSignUp() {
-  const flexDiv = document.createElement("div");
-  flexDiv.className = "flexDiv";
+  // const flexDiv = document.querySelector(".flexDiv");
+  flexDiv.innerText = "";
+  bodyTitle.innerHTML = "<h1>Welcome Munchkin</h1>";
+  bodySecondTitle.innerText = "";
 
   const loginDiv = document.createElement("div");
   loginDiv.className = "innerDiv";
@@ -28,7 +30,6 @@ function loginOrSignUp() {
 
   signupDiv.append(imgSignup, pSignup);
   flexDiv.append(loginDiv, signupDiv);
-  flexDivBody.appendChild(flexDiv);
 
   loginDiv.addEventListener("click", fetchThenRenderUsers);
   signupDiv.addEventListener("click", signupPage);
@@ -37,7 +38,7 @@ function loginOrSignUp() {
 function sayHello(user) {
   currentPage = "Balloons";
   currentUser = user;
-  flexDivBody.innerHTML = "";
+  flexDiv.innerText = "";
   bodySecondTitle.innerHTML = "";
 
   bodySecondTitle.className += " nameBounce";

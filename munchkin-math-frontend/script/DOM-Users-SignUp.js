@@ -88,7 +88,7 @@ function makeUser() {
     avatar: event.target.dataset.url,
     color: ""
   };
-  addUserToServer(newUser).then(sayHello(newUser));
+  addUserToServer(newUser).then(sayHello);
 
   event.target.reset();
 }
@@ -100,5 +100,5 @@ function addUserToServer(user) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(user)
-  });
+  }).then(resp => resp.json());
 }

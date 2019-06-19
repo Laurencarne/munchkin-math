@@ -23,15 +23,19 @@
   <body>
     <div class="navBar pullUpDown container">
       <ul>
-        <li class="avatar">
-          <a href="#"><i class="fas fa-school"></i></a>
+        <li onclick="userProfile()" class="avatar">
+          <a><i class="fas fa-school"></i></a>
         </li>
-        <li style="float:right" class="logout"><a href="#">Logout</a></li>
-        <li style="float:right" class="back"><a href="#">Go Back</a></li>
-        <li style="float:right" class="home"><a href="#">Home</a></li>
+        <li onclick="logout()" style="float:right" class="logout">
+          <a>Logout</a>
+        </li>
+        <li onclick="goBack()" style="float:right" class="back">
+          <a>Go Back</a>
+        </li>
+        <li onclick="home()" style="float:right" class="home"><a>Home</a></li>
       </ul>
     </div>
-    <div class="bodyTitle"><h1>Welcome Munchkin</h1></div>
+    <div class="bodyTitle"></div>
     <div class="bodySecondTitle"></div>
     <div id="flexDiv" class="flexDiv"></div>
 
@@ -40,6 +44,7 @@
     <div class="balloonDiv"></div>
 
     <script type="text/javascript" src="script/const.js"></script>
+    <script type="text/javascript" src="script/navbar.js"></script>
     <script type="text/javascript" src="script/DOM-Render.js"></script>
     <script type="text/javascript" src="script/DOM-WelcomePage.js"></script>
     <script type="text/javascript" src="script/DOM-Users-SignUp.js"></script>
