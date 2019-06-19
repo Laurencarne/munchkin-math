@@ -1,29 +1,3 @@
-const balloonDiv = document.querySelector(".balloonDiv");
-const body = document.querySelector("body");
-const enterSiteDiv = document.querySelector(".enterSite");
-const flexDivBody = document.querySelector("#flexDiv");
-const bodyTitle = document.querySelector(".bodyTitle");
-const bodySecondTitle = document.querySelector(".bodySecondTitle");
-const fetchUsers = () => fetch(usersUrl).then(response => response.json());
-const avatars = [
-  "https://i.imgur.com/FH0SJMM.png",
-  "https://i.imgur.com/tTpEPBa.png",
-  "https://i.imgur.com/LnDRhUl.png",
-  "https://i.imgur.com/smtuHn5.png",
-  "https://i.imgur.com/rRlxBHn.png",
-  "https://i.imgur.com/xan5sih.png",
-  "https://i.imgur.com/hzCfWht.png",
-  "https://i.imgur.com/V0lOVy8.png",
-  "https://i.imgur.com/x6P8NhG.png",
-  "https://i.imgur.com/SnKgXqk.png"
-];
-let currentTestId = 0;
-const easySubtractionArray = [6, 7, 8, 9, 10];
-const hardSubtractionArray = [21, 22, 23, 24, 25];
-const easyAdditionArray = [1, 2, 3, 4, 5];
-const hardAdditionArray = [16, 17, 18, 19, 20];
-const numbersArray = [11, 12, 13, 14, 15];
-
 document.addEventListener("DOMContentLoaded", function() {
   loginOrSignUp();
 });
@@ -79,17 +53,4 @@ function sayHello(user) {
   setTimeout(() => {
     landingPage();
   }, 9500);
-}
-
-function enterSite() {
-  setTimeout(() => {
-    const img = document.createElement("img");
-    img.src = "https://i.imgur.com/3u67mk8.png";
-    img.className = "enterImg";
-    enterSiteDiv.append(img);
-  }, 6000);
-}
-
-function enterPage() {
-  landingPage();
 }

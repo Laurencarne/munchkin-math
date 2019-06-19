@@ -1,4 +1,6 @@
 function landingPage() {
+  counter = 0;
+
   flexDivBody.innerHTML = "";
   bodySecondTitle.className -= " nameBounce";
   bodySecondTitle.innerHTML = "";
@@ -45,12 +47,7 @@ function landingPage() {
   flexDiv.append(numbersTestDiv, additionTestDiv, subtractionTestDiv);
   flexDivBody.appendChild(flexDiv);
 
-  numbersTestDiv.addEventListener("click", () =>
-    runDragAndDropTest(
-      numbersArray[Math.floor(Math.random() * numbersArray.length)]
-    )
-  );
-
+  numbersTestDiv.addEventListener("click", setTestIdAndRun);
   additionTestDiv.addEventListener("click", additionTestOptions);
   subtractionTestDiv.addEventListener("click", subtractionTestOptions);
 }

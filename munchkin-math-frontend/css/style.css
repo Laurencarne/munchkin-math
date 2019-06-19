@@ -1,0 +1,112 @@
+/* ALL PAGES */
+body {
+  background-color: #3490dc;
+  font-family: "Mali", cursive;
+}
+/* TEXT INSIDE BODY HEADER */
+h1 {
+  color: #e8d258;
+  font-size: 5em;
+  text-align: center;
+  text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+}
+/* TEXT INSIDE THE BODY SECOND HEADER */
+h2 {
+  color: #e8d258;
+  font-size: 3em;
+  text-align: center;
+  text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+}
+/* MAIN DIV IN THE BODY TO APPEND ALL MAIN CHILDREN */
+.flexDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+}
+/* DIV INSIDE THE FLEX DIV, USE FOR PICTURES AND BUTTONS ETC */
+.innerDiv {
+  text-align: center;
+  border: rgba(249, 239, 147, 0.5) solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px rgba(249, 239, 147, 0.5);
+  border-radius: 0.2rem;
+}
+
+.innerDiv:hover {
+  background-color: rgba(249, 239, 147, 0.2);
+}
+
+.landingPageTestPicture {
+  height: 200px;
+  width: auto;
+}
+
+.loginImg {
+  height: 200px;
+  width: auto;
+}
+
+.pLoginOrSignup {
+  font-size: 2em;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.userAvatarImg {
+  height: 175px;
+  width: auto;
+}
+
+.loginAge {
+  margin: 0;
+}
+
+.loginName {
+  margin: 0;
+}
+
+/* AVATARS */
+.miniInnerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: rgba(249, 239, 147, 0.5) solid 1px;
+  width: 120px;
+  height: 120px;
+  margin: 1rem 0.5rem;
+  box-shadow: 3px 4px rgba(249, 239, 147, 0.5);
+  border-radius: 0.2rem;
+}
+
+.miniInnerDiv:hover {
+  background-color: rgba(249, 239, 147, 0.2);
+}
+
+.selected {
+  background-color: orange;
+}
+
+.selected:hover {
+  background-color: orange;
+}
+
+.miniUserAvatarImg {
+  justify-content: center;
+  height: 90px;
+  width: 90px;
+}
+
+.imageHolderDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+}

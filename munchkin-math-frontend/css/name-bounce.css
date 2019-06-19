@@ -1,0 +1,98 @@
+.nameBounce {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  text-align: center;
+}
+
+.nameBounce span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bouncy 0.7s ease infinite alternate;
+  font-family: "Mali", cursive;
+  font-size: 80px;
+  line-height: 110px;
+  color: whitesmoke;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 0 transparent, 0 11px 0 transparent,
+    0 12px 0 transparent, 0 13px 0 transparent, 0 14px 0 transparent,
+    0 15px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nameBounce span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.nameBounce span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nameBounce span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.nameBounce span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.nameBounce span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.nameBounce span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.nameBounce span:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.nameBounce span:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.nameBounce span:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.nameBounce span:nth-child(10) {
+  animation-delay: 1s;
+}
+.nameBounce span:nth-child(11) {
+  animation-delay: 1.1s;
+}
+.nameBounce span:nth-child(12) {
+  animation-delay: 1.2s;
+}
+.nameBounce span:nth-child(13) {
+  animation-delay: 1.3s;
+}
+.nameBounce span:nth-child(14) {
+  animation-delay: 1.4s;
+}
+.nameBounce span:nth-child(15) {
+  animation-delay: 1.5s;
+}
+
+@keyframes bouncy {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+      0 10px 0 #ccc, 0 11px 0 #ccc, 0 12px 0 #ccc, 0 13px 0 #ccc, 0 14px 0 #ccc,
+      0 15px 0 #ccc, 0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.bounce {
+  color: whitesmoke;
+  animation-timing-function: ease-in-out;
+  animation-name: bounceIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

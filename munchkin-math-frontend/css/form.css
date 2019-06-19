@@ -1,0 +1,53 @@
+.input {
+  width: 80%;
+  position: relative;
+  display: inline-block;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-box {
+  width: 100%;
+  border-radius: 10px;
+  border: orange 2px solid;
+  height: 3em;
+  text-align: center;
+  background-color: white;
+  color: #3490dc;
+  font-size: 12px;
+  font-family: "Mali", cursive;
+  box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
+
+.input-box:hover {
+  background-color: orange;
+  border: whitesmoke solid 1px;
+  color: #3490dc;
+}
+
+::placeholder {
+  color: rgba(52, 144, 220, 0.6);
+  font-size: 12px;
+}
+
+.submit-box {
+  width: 100%;
+  border-radius: 10px;
+  border: whitesmoke 2px solid;
+  height: 3em;
+  text-align: center;
+  background-color: rgba(255, 154, 2, 1);
+  color: whitesmoke;
+  font-size: 12px;
+  font-family: "Mali", cursive;
+  box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.submit-box:hover {
+  background-color: whitesmoke;
+  border: whitesmoke solid 1px;
+  color: orange;
+}

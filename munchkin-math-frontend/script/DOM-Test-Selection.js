@@ -8,7 +8,7 @@ function additionTestOptions() {
   const easyDiv = document.createElement("div");
   easyDiv.className = "innerDiv";
   const pEasy = document.createElement("p");
-  pEasy.innerText = "Level One";
+  pEasy.innerText = "Addition - Level One";
   const imgEasy = document.createElement("img");
   imgEasy.src = "https://i.imgur.com/kBwjycy.png";
   imgEasy.className = "landingPageTestPicture";
@@ -17,7 +17,7 @@ function additionTestOptions() {
   const hardDiv = document.createElement("div");
   hardDiv.className = "innerDiv";
   const pHard = document.createElement("p");
-  pHard.innerText = "Level Two";
+  pHard.innerText = "Addition - Level Two";
   const imgHard = document.createElement("img");
   imgHard.src = "https://i.imgur.com/ZW3TteV.png";
   imgHard.className = "landingPageTestPicture";
@@ -25,16 +25,8 @@ function additionTestOptions() {
 
   flexDiv.append(easyDiv, hardDiv);
 
-  easyDiv.addEventListener("click", () =>
-    easyAdditionTest(
-      easyAdditionArray[Math.floor(Math.random() * easyAdditionArray.length)]
-    )
-  );
-  hardDiv.addEventListener("click", () =>
-    hardAdditionTest(
-      hardAdditionArray[Math.floor(Math.random() * hardAdditionArray.length)]
-    )
-  );
+  easyDiv.addEventListener("click", setTestIdAndRun);
+  hardDiv.addEventListener("click", setTestIdAndRun);
 }
 
 function subtractionTestOptions() {
@@ -47,7 +39,7 @@ function subtractionTestOptions() {
   const easyDiv = document.createElement("div");
   easyDiv.className = "innerDiv";
   const pEasy = document.createElement("p");
-  pEasy.innerText = "Level One";
+  pEasy.innerText = "Subtraction - Level One";
   const imgEasy = document.createElement("img");
   imgEasy.src = "https://i.imgur.com/kBwjycy.png";
   imgEasy.className = "landingPageTestPicture";
@@ -56,7 +48,7 @@ function subtractionTestOptions() {
   const hardDiv = document.createElement("div");
   hardDiv.className = "innerDiv";
   const pHard = document.createElement("p");
-  pHard.innerText = "Level Two";
+  pHard.innerText = "Subtraction - Level Two";
   const imgHard = document.createElement("img");
   imgHard.src = "https://i.imgur.com/ZW3TteV.png";
   imgHard.className = "landingPageTestPicture";
@@ -64,18 +56,33 @@ function subtractionTestOptions() {
 
   flexDiv.append(easyDiv, hardDiv);
 
-  easyDiv.addEventListener("click", () =>
-    easySubtractionTest(
+  easyDiv.addEventListener("click", setTestIdAndRun);
+  hardDiv.addEventListener("click", setTestIdAndRun);
+}
+
+function setTestIdAndRun() {
+  let testTarget = event.target.parentElement.innerText;
+
+  if (testTarget === "Numbers") {
+    currentTestId =
+      numbersArray[Math.floor(Math.random() * numbersArray.length)];
+  } else if (testTarget === "Addition - Level One") {
+    currentTestId =
+      easyAdditionArray[Math.floor(Math.random() * easyAdditionArray.length)];
+    getTest(currentTestId);
+  } else if (testTarget === "Addition - Level Two") {
+    currentTestId =
+      hardAdditionArray[Math.floor(Math.random() * hardAdditionArray.length)];
+  } else if (testTarget === "Subtraction - Level One") {
+    currentTestId =
       easySubtractionArray[
         Math.floor(Math.random() * easySubtractionArray.length)
-      ]
-    )
-  );
-  hardDiv.addEventListener("click", () =>
-    hardSubtractionTest(
+      ];
+    getTest(currentTestId);
+  } else if (testTarget === "Subtraction - Level Two") {
+    currentTestId =
       hardSubtractionArray[
         Math.floor(Math.random() * hardSubtractionArray.length)
-      ]
-    )
-  );
+      ];
+  }
 }

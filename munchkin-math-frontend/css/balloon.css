@@ -1,0 +1,178 @@
+.balloon1 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon1;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  opacity: 0.6;
+}
+
+@keyframes flyBalloon1 {
+  0% {
+    top: 800px;
+    left: 10%;
+    transform: scale(1);
+  }
+  40% {
+    left: 30%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 10%;
+  }
+  100% {
+    top: -600px;
+    left: 10%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+
+.balloon2 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon2;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  opacity: 0.6;
+}
+
+@keyframes flyBalloon2 {
+  0% {
+    top: 800px;
+    left: 5%;
+    transform: scale(1);
+  }
+  40% {
+    left: 20%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 5%;
+  }
+  100% {
+    top: -600px;
+    left: 5%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+
+.balloon3 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon3;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  opacity: 0.6;
+}
+
+@keyframes flyBalloon3 {
+  0% {
+    top: 800px;
+    left: 100%;
+    transform: scale(1);
+  }
+  40% {
+    left: 70%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 95%;
+  }
+  100% {
+    top: -600px;
+    left: 100%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+
+.balloon4 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon4;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  opacity: 0.6;
+}
+
+@keyframes flyBalloon4 {
+  0% {
+    top: 800px;
+    left: 80%;
+    transform: scale(1);
+  }
+  40% {
+    left: 60%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 90%;
+  }
+  100% {
+    top: -600px;
+    left: 90%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+
+.balloon5 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon5;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon5 {
+  0% {
+    top: 800px;
+    left: 70%;
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  100% {
+    top: -600px;
+    left: 10%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}
+.balloon6 {
+  height: 300px;
+  width: auto;
+  position: absolute;
+  animation-name: flyBalloon6;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes flyBalloon6 {
+  0% {
+    top: 800px;
+    left: 40%;
+    transform: scale(1);
+  }
+  40% {
+    left: 50%;
+    transform: scale(1.5);
+  }
+  70% {
+    left: 60%;
+  }
+  100% {
+    top: -600px;
+    left: 60%;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+}

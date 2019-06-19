@@ -1,11 +1,11 @@
 counter = 0;
 
-function runEasySubtractionTest(testId) {
+function getTest(testId) {
   currentTestId = testId;
-  getSingleTestFromServer(testId).then(easySubtractionPage);
+  getSingleTestFromServer(testId).then(runTest);
 }
 
-function easySubtractionPage(test) {
+function runTest(test) {
   const question = test.questions[counter];
 
   flexDivBody.innerHTML = "";
@@ -14,13 +14,16 @@ function easySubtractionPage(test) {
 
   const holderDiv = document.createElement("div");
   holderDiv.className = "holderDiv";
-  const divQuestion = document.createElement("div");
+
   const div1 = document.createElement("div");
   div1.addEventListener("click", submitAnswer);
+
   const div2 = document.createElement("div");
   div2.addEventListener("click", submitAnswer);
+
   const div3 = document.createElement("div");
   div3.addEventListener("click", submitAnswer);
+
   const div4 = document.createElement("div");
   div4.addEventListener("click", submitAnswer);
 
@@ -29,23 +32,24 @@ function easySubtractionPage(test) {
   div3.className = "empty";
   div4.className = "empty";
 
-  const innerDiv = document.createElement("div");
-
   const answer1 = document.createElement("p");
   answer1.innerText = question.answer1;
   answer1.dataset.id = answer1.innerText;
   answer1.dataset.correct = question.correct_answer;
   answer1.className = "answerP";
+
   const answer2 = document.createElement("p");
   answer2.innerText = question.answer2;
   answer2.dataset.id = answer2.innerText;
   answer2.dataset.correct = question.correct_answer;
   answer2.className = "answerP";
+
   const answer3 = document.createElement("p");
   answer3.innerText = question.answer3;
   answer3.dataset.id = answer3.innerText;
   answer3.dataset.correct = question.correct_answer;
   answer3.className = "answerP";
+
   const answer4 = document.createElement("p");
   answer4.innerText = question.correct_answer;
   answer4.dataset.id = answer4.innerText;
@@ -58,11 +62,11 @@ function easySubtractionPage(test) {
   div2.appendChild(answer2);
   div3.appendChild(answer3);
   div4.appendChild(answer4);
-  divQuestion.appendChild(innerDiv);
 }
 
 function submitAnswer() {
   event.preventDefault();
+
   event.target.parentElement.classList.add("selected");
   answer = event.target.dataset.id;
   correctAnswer = event.target.dataset.correct;
@@ -73,10 +77,9 @@ function submitAnswer() {
 }
 
 function checkAnswer(answer) {
-  console.log(answer);
   if (answer === correctAnswer) {
     flexDivBody.innerHTML = "";
-    bodyTitle.innerHTML = `<h1>Nice Work!</h1> <br> <h2> The correct answer was ${correctAnswer}`;
+    bodyTitle.innerHTML = `<h1>Nice Work!</h1> <br> <h2> The correct answer is ${correctAnswer}`;
     const correctDiv = document.createElement("div");
     correctDiv.className = correctDiv;
     const correctImg = document.createElement("img");
@@ -103,18 +106,16 @@ function checkAnswer(answer) {
     nextQuestion.className = "nextQuestionButton";
     nextQuestion.innerText = "Continue...";
     nextQuestion.type = "button";
-    nextQuestion.addEventListener("click", runNextSubtractionQuestion);
+    nextQuestion.addEventListener("click", runNextQuestion);
     flexDivBody.appendChild(nextQuestion);
   }, 2500);
 }
 
-function runNextSubtractionQuestion() {
+function runNextQuestion() {
   if (counter >= 4) {
-    console.log(`The counter is currently ${counter}`);
     landingPage();
   } else {
     counter += 1;
-    console.log(`The counter is currently ${counter}`);
-    runEasySubtractionTest(currentTestId);
+    getTest(currentTestId);
   }
 }

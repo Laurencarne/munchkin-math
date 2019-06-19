@@ -1,0 +1,121 @@
+.holderDiv {
+  display: flex;
+  justify-content: space-around;
+}
+.imageDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.answerP {
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  color: black;
+  font-size: 7em;
+  margin: 0;
+  padding: 0;
+  text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fill {
+  display: flex;
+  justify-content: space-around;
+  background-image: url("https://i.imgur.com/yIS9HuQ.png");
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.empty {
+  display: flex;
+  justify-content: space-around;
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  border: 3px black solid;
+  background-color: white;
+}
+
+.hold {
+  border: solid orange 4px;
+}
+
+.hovered {
+  background: lightGrey;
+  border-style: dashed;
+}
+
+.invisible {
+  display: none;
+}
+
+.correctDiv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.wrongDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.correctImg {
+  height: 90px;
+  width: auto;
+  border-width: 0;
+  color: whitesmoke;
+  font-size: 12px;
+  align-content: center;
+  animation-timing-function: ease-in-out;
+  animation-name: grading;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+}
+
+.wrongImg {
+  display: flex;
+  justify-content: center;
+  height: 90px;
+  width: auto;
+  align-content: center;
+  animation-timing-function: ease-in-out;
+  animation-name: grading;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+  margin: 0;
+}
+
+@keyframes grading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nextQuestionButton {
+  background-color: orange;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  border-color: white;
+}
+
+.nextQuestionButton:hover {
+  background-color: whitesmoke;
+  border: whitesmoke solid 1px;
+  color: orange;
+}
