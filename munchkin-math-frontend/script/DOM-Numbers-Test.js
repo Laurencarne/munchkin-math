@@ -30,10 +30,12 @@ function dragAndDropPage(test) {
   answer1.innerText = question.answer1;
   answer1.dataset.id = answer1.innerText;
   answer1.className = "answerP";
+
   const answer2 = document.createElement("p");
   answer2.innerText = question.answer2;
   answer2.dataset.id = answer2.innerText;
   answer2.className = "answerP";
+
   const answer3 = document.createElement("p");
   answer3.innerText = question.answer3;
   answer3.dataset.id = answer3.innerText;
@@ -53,11 +55,19 @@ function dragAndDropPage(test) {
 
   flexDivBody.append(imageDiv, holderDiv);
   imageDiv.appendChild(divQuestion);
-  holderDiv.append(div1, div2, div3, div4);
   div1.appendChild(answer1);
   div2.appendChild(answer2);
   div3.appendChild(answer3);
   div4.appendChild(answer4);
+
+  let arr = [div1, div2, div3, div4];
+  let num = 0;
+
+  while (arr.length > 0) {
+    num = Math.floor(Math.random() * arr.length);
+    holderDiv.append(arr[num]);
+    arr.splice(num, 1);
+  }
   divQuestion.appendChild(innerDiv);
 
   empties = document.querySelectorAll(".empty");
