@@ -2,7 +2,10 @@ function home() {
   loginOrSignUp();
 }
 
-function goBack() {}
+function goBack() {
+  if (currentPage === "LandingPage") {
+  }
+}
 
 function logout() {
   currentUser = null;
@@ -13,4 +16,6 @@ function logout() {
     loginOrSignUp();
   }, 2000);
 }
-function userProfile() {}
+function userProfile() {
+  loginOrSignUp();
+}

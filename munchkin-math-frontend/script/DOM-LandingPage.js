@@ -3,7 +3,6 @@ function landingPage() {
   counter = 0;
   testScore = 0;
   flexDivBody.innerHTML = "";
-  // bodySecondTitle.classList.remove(nameBounce);
   bodySecondTitle.innerHTML = "";
   bodyTitle.innerHTML = "";
 
