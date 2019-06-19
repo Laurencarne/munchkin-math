@@ -1,6 +1,4 @@
 function runDragAndDropTest(testId) {
-  console.log(`${testId} running a drag and drop question`);
-  currentTestId = testId;
   getSingleTestFromServer(testId).then(dragAndDropPage);
 }
 
@@ -82,7 +80,7 @@ function dragAndDropPage(test) {
 
   function dragEnd() {
     this.className = "fill";
-    this.draggable = false;
+    // this.draggable = false;
   }
 
   function dragOver() {
@@ -133,17 +131,17 @@ function dragAndDropPage(test) {
       nextQuestion.className = "nextQuestionButton";
       nextQuestion.innerText = "Continue...";
       nextQuestion.type = "button";
-      nextQuestion.addEventListener("click", runNextQuestion);
+      nextQuestion.addEventListener("click", runNextQuestionDrag);
       flexDivBody.appendChild(nextQuestion);
     }, 2500);
   }
 }
-//
-// function runNextQuestion() {
-//   if (counter >= 4) {
-//     landingPage();
-//   } else {
-//     counter += 1;
-//     runDragAndDropTest(currentTestId);
-//   }
-// }
+
+function runNextQuestionDrag() {
+  if (counter >= 4) {
+    landingPage();
+  } else {
+    counter += 1;
+    runDragAndDropTest(currentTestId);
+  }
+}

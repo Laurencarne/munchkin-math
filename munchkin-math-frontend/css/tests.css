@@ -1,8 +1,10 @@
 .holderDiv {
+  position: relative;
   display: flex;
   justify-content: space-around;
 }
 .imageDiv {
+  position: relative;
   display: flex;
   justify-content: space-around;
 }
@@ -48,7 +50,7 @@
 }
 
 .hovered {
-  background: lightGrey;
+  background: rgba(255, 154, 2, 0.7);
   border-style: dashed;
 }
 
