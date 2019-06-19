@@ -71,9 +71,9 @@ function runTest(test) {
     let num = 0;
 
     while (arr.length > 0) {
-      num = arr[Math.floor(Math.random() * arr.length)] - 1;
-      indexNum = arr.indexOf(num);
-      holderDiv.append(arr.splice(indexNum, 1)[0]);
+      num = Math.floor(Math.random() * arr.length);
+      holderDiv.append(arr[num]);
+      arr.splice(num, 1);
     }
     //
   } else if (currentTestId >= 16 && currentTestId <= 25) {
