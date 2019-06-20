@@ -191,5 +191,5 @@ Question.create(test_id: 25, number: 4, question: "7 - 4", correct_answer: "3", 
 Question.create(test_id: 25, number: 5, question: "18 - 13", correct_answer: "5", answer1: "10", answer2: "4", answer3: "9", image_url: "")
 
 # USERTEST
-20.times do  UserTest.create(test_id: Test.all.sample.id, user_id: User.all.sample.id, score: 0)
+20.times do  UserTest.create(test_id: Test.all.sample.id, user_id: User.all.sample.id, score: Faker::Number.between(0, 5))
 end

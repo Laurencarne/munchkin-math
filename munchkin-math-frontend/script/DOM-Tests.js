@@ -154,7 +154,7 @@ function checkAnswer(answer, correctAnswer) {
 function runNextQuestion() {
   if (counter >= 4) {
     makeUserTest();
-    displayScorePage();
+    displayTestResultPage();
     setTimeout(() => {
       landingPage();
     }, 3000);
