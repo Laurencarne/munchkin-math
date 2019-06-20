@@ -20,7 +20,6 @@ h2 {
 h3 {
   color: #e8d258;
   font-size: 2em;
-  text-align: center;
   text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
 }
 /* MAIN DIV IN THE BODY TO APPEND ALL MAIN CHILDREN */
@@ -31,6 +30,28 @@ h3 {
   justify-content: space-around;
   align-items: center;
   align-content: space-between;
+}
+
+/* PROFILE PAGE */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.profileHolder {
+  display: flex;
+}
+.profilePicture {
+  margin: 30px 50px;
+}
+.profileDiv {
+  display: flex;
+  justify-content: center;
+}
+.profilePicture {
+  height: 400px;
+  width: auto;
 }
 /* DIV INSIDE THE FLEX DIV, USE FOR PICTURES AND BUTTONS ETC */
 .innerDiv {

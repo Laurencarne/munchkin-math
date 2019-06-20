@@ -3,22 +3,21 @@ function profilePage() {
   resetPage();
   createHeader(`${currentUser.name}'s Area`);
 
-  // const profileDiv = createElement("div", "flexDivBody");
+  const profileHolderDiv = createElement("div", "profileHolder");
 
-  const innerDiv = createElement("div", "innerDiv");
-  innerDiv.append(
-    createImage(currentUser.avatar, "landingPageTestPicture"),
-    createElement("")
+  const pictureDiv = createElement("div");
+  pictureDiv.append(createImage(currentUser.avatar, "profilePicture"));
+
+  const profile = createElement("div", "profile");
+
+  profile.append(
+    createElement("h2", null, `Name: ${currentUser.name}`),
+    createElement("h3", null, `Age: ${currentUser.age} Years Old!`),
+    createElement("h3", null, `This will show the current top score`)
   );
 
-  // profileDiv.append(innerDiv);
-
-  bodySecondTitle.append(
-    innerDiv,
-    profileDiv,
-    createElement("h2", null, currentUser.name),
-    createElement("h3", null, currentUser.age)
-  );
+  profileDiv.append(profileHolderDiv);
+  profileHolderDiv.append(pictureDiv, profile);
 
   addUpdateDiv();
 }
@@ -42,6 +41,7 @@ function addUpdateDiv() {
 
 function changeMyAvatar() {
   flexDivBody.innerHTML = "";
+  profileDiv.innerHTML = "";
   createSubHeading("Choose Your New Avatar");
 
   const form = createElement("form", "input");

@@ -1,6 +1,8 @@
 const balloonDiv = document.querySelector(".balloonDiv");
 const flexDivBody = document.querySelector("#flexDivBody");
 const bodyTitle = document.querySelector(".bodyTitle");
+const body = document.querySelector("body");
+const profileDiv = document.querySelector(".profileDiv");
 const bodySecondTitle = document.querySelector(".bodySecondTitle");
 const fetchUsers = () => fetch(usersUrl).then(response => response.json());
 
@@ -50,6 +52,7 @@ const resetPage = () => {
   flexDivBody.innerHTML = "";
   bodySecondTitle.innerHTML = "";
   bodyTitle.innerHTML = "";
+  profileDiv.innerHTML = "";
 };
 
 const createHeader = text => {
