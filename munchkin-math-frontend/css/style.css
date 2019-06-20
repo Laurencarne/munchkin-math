@@ -17,6 +17,12 @@ h2 {
   text-align: center;
   text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
 }
+h3 {
+  color: #e8d258;
+  font-size: 2em;
+  text-align: center;
+  text-shadow: 6px 4px 4px rgba(0, 0, 0, 0.5);
+}
 /* MAIN DIV IN THE BODY TO APPEND ALL MAIN CHILDREN */
 .flexDivBody {
   display: flex;

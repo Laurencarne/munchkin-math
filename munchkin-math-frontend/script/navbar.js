@@ -4,7 +4,11 @@ function home() {
 
 function goBack() {
   if (currentPage === "LandingPage") {
-  } else if (currentPage === "InsideTest" || currentPage === "TestOptions") {
+  } else if (
+    currentPage === "InsideTest" ||
+    currentPage === "TestOptions" ||
+    currentPage === "ProfilePage"
+  ) {
     landingPage();
   } else if (currentPage === "UserLogin" || currentPage === "UserSignup") {
     loginOrSignUp();
@@ -25,5 +29,9 @@ function logout() {
 }
 
 function userProfile() {
-  loginOrSignUp();
+  if (currentUser) {
+    profilePage();
+  } else {
+    loginOrSignUp();
+  }
 }
