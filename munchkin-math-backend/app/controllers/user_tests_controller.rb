@@ -7,6 +7,9 @@ class UserTestsController < ApplicationController
           {
             :test => {
               except: [:updated_at, :created_at]
+            },
+            :user => {
+              except: [:updated_at, :created_at]
             }
           }
         ]
@@ -19,6 +22,9 @@ class UserTestsController < ApplicationController
         include: [
           {
             :test => {
+              except: [:updated_at, :created_at]
+            },
+            :user => {
               except: [:updated_at, :created_at]
             }
           }

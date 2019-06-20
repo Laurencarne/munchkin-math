@@ -23,6 +23,7 @@ function makeLeaderboard() {
 
 function displayPersonalScores() {
   resetPage();
+  createHeader(`Your completed tests:`);
   makeLeaderboard();
   getAllUserTestsFromServer()
     .then(logUserTestIdsLoop)
@@ -47,7 +48,7 @@ function logPersonalTest(userTest) {
     }`
   );
   const scoreRow = createElement("tr");
-  scoreRow.innerHTML = `<td>${currentUser.name}</td><td>${
+  scoreRow.innerHTML = `<td>${userTest.user.name}</td><td>${
     userTest.test.name
   }</td><td>${userTest.score}</td>`;
   leaderboard.append(scoreRow);
