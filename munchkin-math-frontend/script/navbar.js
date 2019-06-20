@@ -1,6 +1,9 @@
-function home() {
-  landingPage();
-}
+// function home() {
+//   if (currentPage === "") {
+//
+//   }
+//   landingPage();
+// }
 
 function goBack() {
   if (currentPage === "LandingPage") {
@@ -22,10 +25,18 @@ function logout() {
   avatarNav.src = "https://i.imgur.com/QbymuiR.png";
   flexDivBody.innerText = "";
   bodySecondTitle.innerHTML = "";
-  bodyTitle.innerHTML = "<h1> You have been logged Out</h1>";
+  bodyTitle.innerHTML = "<h1> GoodBye! </h1>";
+
+  const goodbyeImageDiv = createElement("div", "goodbyeImage1");
+  flexDivBody.appendChild(goodbyeImageDiv);
+
+  logoutNav.classList.add("hide");
+  goBackNav.classList.add("hide");
+  homeNav.classList.add("hide");
+
   setTimeout(() => {
     loginOrSignUp();
-  }, 2000);
+  }, 7000);
 }
 
 function userProfile() {

@@ -77,3 +77,18 @@ div.container a.firstNav {
 .hide {
   display: none;
 }
+
+.goodbyeImage1 {
+  background-image: url("https://i.imgur.com/f9ybR3a.png");
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  animation: wave 1s steps(1) infinite both;
+}
+
+@keyframes wave {
+  50% {
+    background-image: url("https://i.imgur.com/D5GKmyH.png");
+    background-size: cover;
+  }
+}
