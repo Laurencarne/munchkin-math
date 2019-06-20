@@ -2,11 +2,15 @@
   position: relative;
   display: flex;
   justify-content: space-around;
+  width: 80%;
 }
 .imageDiv {
   position: relative;
   display: flex;
   justify-content: space-around;
+}
+.imageHolder {
+  height: 250px;
 }
 
 .answerP {
@@ -27,8 +31,8 @@
   background-position: center;
   background-size: contain;
   position: relative;
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 250px;
   top: 5px;
   left: 5px;
   cursor: pointer;
