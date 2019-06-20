@@ -103,10 +103,15 @@ function submitAnswerHard() {
 
 function checkAnswer(answer, correctAnswer) {
   resetPage();
-  createSubHeading(`The correct answer is ${correctAnswer}`);
+
+  profileDiv.append(
+    createElement("h2", null, `The Correct Answer is ${correctAnswer}.`)
+  );
+
   if (answer === correctAnswer) {
     testScore++;
     createHeader(`Nice Work ${currentUser.name}!`);
+
     const correctDiv = createElement("div", "correctDiv");
     correctDiv.appendChild(
       createImage(
@@ -114,7 +119,16 @@ function checkAnswer(answer, correctAnswer) {
         "correctImg"
       )
     );
-    flexDivBody.appendChild(correctDiv);
+    setTimeout(() => {
+      bodySecondTitle.innerHTML = "";
+      const nextQuestionArrow = createImage(
+        "https://i.imgur.com/oZI7ULF.png",
+        "nextQuestionArrow"
+      );
+      bodySecondTitle.appendChild(nextQuestionArrow);
+      nextQuestionArrow.addEventListener("click", runNextQuestion);
+    }, 2500);
+    bodySecondTitle.appendChild(correctDiv);
   } else {
     createHeader(`Not Quite ${currentUser.name}`);
     const wrongDiv = createElement("div", "wrongDiv");
@@ -124,32 +138,18 @@ function checkAnswer(answer, correctAnswer) {
         "wrongImg"
       )
     );
-    flexDivBody.appendChild(wrongDiv);
+    setTimeout(() => {
+      bodySecondTitle.innerHTML = "";
+      const nextQuestionArrow = createImage(
+        "https://i.imgur.com/oZI7ULF.png",
+        "nextQuestionArrow"
+      );
+      bodySecondTitle.appendChild(nextQuestionArrow);
+      nextQuestionArrow.addEventListener("click", runNextQuestion);
+    }, 2500);
+    bodySecondTitle.appendChild(wrongDiv);
   }
-  setTimeout(() => {
-    const nextQuestion = createElement(
-      "button",
-      "nextQuestionButton",
-      "Continue..."
-    );
-    nextQuestion.type = "button";
-    nextQuestion.addEventListener("click", runNextQuestion);
-    flexDivBody.appendChild(nextQuestion);
-  }, 2500);
 }
-
-// function runNextQuestion(functionCall) {
-//   if (counter >= 4) {
-//     makeUserTest();
-//     displayScorePage();
-//     setTimeout(() => {
-//       landingPage();
-//     }, 3000);
-//   } else {
-//     counter += 1;
-//     functionCall;
-//   }
-// }
 
 function runNextQuestion() {
   if (counter >= 4) {

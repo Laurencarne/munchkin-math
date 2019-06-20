@@ -66,38 +66,14 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .wrongDiv {
   display: flex;
   justify-content: center;
   align-content: center;
-}
-
-.correctImg {
-  height: 90px;
-  width: auto;
-  border-width: 0;
-  color: whitesmoke;
-  font-size: 12px;
-  align-content: center;
-  animation-timing-function: ease-in-out;
-  animation-name: grading;
-  animation-duration: 2s;
-  animation-iteration-count: 3;
-}
-
-.wrongImg {
-  display: flex;
-  justify-content: center;
-  height: 90px;
-  width: auto;
-  align-content: center;
-  animation-timing-function: ease-in-out;
-  animation-name: grading;
-  animation-duration: 2s;
-  animation-iteration-count: 3;
-  margin: 0;
+  align-items: center;
 }
 
 @keyframes grading {
@@ -112,16 +88,37 @@
   }
 }
 
-.nextQuestionButton {
-  background-color: orange;
-  border-radius: 50%;
-  height: 80px;
-  width: 80px;
-  border-color: white;
+.nextQuestionArrow {
+  height: auto;
+  width: 20%;
+  animation-timing-function: ease-in-out;
+  animation-name: grading;
+  animation-duration: 1.5s;
+  animation-iteration-count: 3;
 }
 
-.nextQuestionButton:hover {
-  background-color: whitesmoke;
-  border: whitesmoke solid 1px;
-  color: orange;
+.correctImg {
+  height: 60%;
+  width: auto;
+  animation-name: markTesting;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+.wrongImg {
+  height: 60%;
+  width: auto;
+  animation-name: markTesting;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes markTesting {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
 }
