@@ -171,35 +171,33 @@ h3 {
 }
 
 .totalScoreboard {
-  border: 1px solid black;
+  border: 5px transparent black;
   border-collapse: collapse;
-  width: 80%;
+  width: 60%;
+  table-layout: fixed;
 }
 
 /* tr {
   border: 1px solid black;
 } */
-tr:hover {
-  background-color: #f4b727;
-}
-tr:nth-child(even):hover {
-  background-color: #f4b727;
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+tr:nth-child(odd) {
+  background-color: rgba(245, 245, 245, 0.7);
 }
 
 td {
   /* border: 1px solid black; */
   text-align: center;
+  font-size: 1.2em;
+  color: rgb(43, 39, 39);
   padding: 15px;
 }
 
 th {
-  background: #111;
-  color: #fff;
-  border: 1px solid black;
+  background: #f4b727;
+  color: rgba(12, 2, 2, 0.7);
+  /* border: 1px solid black; */
   height: 50px;
   text-align: center;
   font-size: 2em;
+  padding: 15px;
 }
