@@ -1,8 +1,10 @@
 function displayLeaderboardPage() {
   //Get each users userTests and add the scores
   resetPage();
+  currentPage = "LeaderboardPage";
   createHeader(`Overall Leaderboard`);
   makeTotalScoreboard();
+
   getAllUserTestsFromServer()
     // .then(sortUserTestArraybyUser)
     .then(addUserTestScores);
@@ -38,17 +40,16 @@ function addUserTestScores(SortedTestsArray) {
     return y < x ? -1 : y > x ? 1 : 0;
   });
 
-  tests.forEach(function(y) {
-    flexDivBody.append(createElement("h3", null, y.name));
-  });
-
-  tests.forEach(function(x) {
-    flexDivBody.append(createElement("p", null, x.score));
+  tests.forEach(test => {
+    const leaderboardRow = createElement("tr", "tableRow");
+    leaderboardRow.innerHTML = `<td>${test.name}</td><td>${test.score}</td>`;
+    const leaderboard = document.querySelector(".tablehead");
+    leaderboard.append(leaderboardRow);
   });
 }
 
 function makeTotalScoreboard() {
-  flexDivBody.append((totalScoreboard = createElement("table")));
+  flexDivBody.append((totalScoreboard = createElement("table", "tablehead")));
   totalScoreboard.innerHTML = `<tr>
       <th>User</th>
       <th>Total Score</th>

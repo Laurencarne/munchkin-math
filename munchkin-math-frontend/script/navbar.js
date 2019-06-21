@@ -4,13 +4,17 @@
 //   }
 //   landingPage();
 // }
+function navLeaderboard() {
+  displayLeaderboardPage();
+}
 
 function goBack() {
   if (currentPage === "LandingPage") {
   } else if (
     currentPage === "InsideTest" ||
     currentPage === "TestOptions" ||
-    currentPage === "ProfilePage"
+    currentPage === "ProfilePage" ||
+    currentPage === "LeaderboardPage"
   ) {
     landingPage();
   } else if (currentPage === "UserLogin" || currentPage === "UserSignup") {
@@ -33,6 +37,7 @@ function logout() {
   logoutNav.classList.add("hide");
   goBackNav.classList.add("hide");
   homeNav.classList.add("hide");
+  leaderboardNav.classList.add("hide");
 
   setTimeout(() => {
     loginOrSignUp();
