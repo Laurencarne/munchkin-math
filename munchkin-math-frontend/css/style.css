@@ -170,7 +170,7 @@ h3 {
   color: darkGrey;
 }
 
-.totalScoreboard {
+table {
   border: 5px transparent black;
   border-collapse: collapse;
   width: 60%;

@@ -25,12 +25,13 @@ function goBack() {
 }
 
 function logout() {
+  debugger;
   currentUser = null;
   avatarNav.src = "https://i.imgur.com/QbymuiR.png";
   flexDivBody.innerText = "";
   bodySecondTitle.innerHTML = "";
-  const profileHolder = document.querySelector(".profileHolder");
-  profileHolder.innerHTML = "";
+  // const profileHolder = document.querySelector(".profileHolder");
+  // profileHolder.innerHTML = "";
   bodyTitle.innerHTML = "<h1> GoodBye! </h1>";
 
   const goodbyeImageDiv = createElement("div", "goodbyeImage1");
@@ -38,8 +39,8 @@ function logout() {
 
   logoutNav.classList.add("hide");
   goBackNav.classList.add("hide");
-  homeNav.classList.add("hide");
   leaderboardNav.classList.add("hide");
+  homeNav.classList.add("hide");
 
   setTimeout(() => {
     loginOrSignUp();

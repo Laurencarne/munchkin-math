@@ -12,8 +12,7 @@ function profilePage() {
 
   profile.append(
     createElement("h2", null, `Name: ${currentUser.name}`),
-    createElement("h3", null, `Age: ${currentUser.age} Years Old!`),
-    createElement("h3", null, `This will show the current top score`)
+    createElement("h3", null, `Age: ${currentUser.age} Years Old!`)
   );
 
   profileDiv.append(profileHolderDiv);
@@ -35,8 +34,15 @@ function addUpdateDiv() {
     createImage("https://i.imgur.com/SfPAZzf.png", "landingPageTestPicture"),
     createElement("p", null, "It's My Birthday!")
   );
+
+  const myTestsDiv = createElement("div", "innerDiv");
+  myTestsDiv.append(
+    createImage("https://i.imgur.com/SfPAZzf.png", "landingPageTestPicture"),
+    createElement("p", null, "My Test Results")
+  );
+  myTestsDiv.addEventListener("click", displayPersonalScores);
   changeMyAgeDiv.addEventListener("click", updateUserAge);
-  flexDivBody.append(changeMyAvatarDiv, changeMyAgeDiv);
+  flexDivBody.append(changeMyAvatarDiv, changeMyAgeDiv, myTestsDiv);
 }
 
 function changeMyAvatar() {

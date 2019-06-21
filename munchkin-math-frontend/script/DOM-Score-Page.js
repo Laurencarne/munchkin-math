@@ -13,7 +13,6 @@ function displayTestResultPage() {
 function makeLeaderboard() {
   flexDivBody.append((leaderboard = createElement("table")));
   leaderboard.innerHTML = `<tr>
-    <th>User</th>
     <th>Test</th>
     <th>Score</th>
   </tr>`;
@@ -48,8 +47,20 @@ function logPersonalTest(userTest) {
     }`
   );
   const scoreRow = createElement("tr");
-  scoreRow.innerHTML = `<td>${userTest.user.name}</td><td>${
-    userTest.test.name
-  }</td><td>${userTest.score}</td>`;
+  let testcategory;
+
+  if (easyAdditionArray.includes(userTest.test.id)) {
+    testcategory = "Addition - Level One";
+  } else if (hardAdditionArray.includes(userTest.test.id)) {
+    testcategory = "Addition - Level Twi";
+  } else if (easySubtractionArray.includes(userTest.test.id)) {
+    testcategory = "Subtraction - Level One";
+  } else if (hardSubtractionArray.includes(userTest.test.id)) {
+    testcategory = "Subtraction - Level Two";
+  } else if (numbersArray.includes(userTest.test.id)) {
+    testcategory = "Numbers";
+  }
+
+  scoreRow.innerHTML = `<td>${testcategory}</td><td>${userTest.score}</td>`;
   leaderboard.append(scoreRow);
 }
