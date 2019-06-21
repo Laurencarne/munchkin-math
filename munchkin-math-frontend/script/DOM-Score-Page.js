@@ -46,7 +46,7 @@ function logPersonalTest(userTest) {
   if (easyAdditionArray.includes(userTest.test.id)) {
     testcategory = "Addition - Level One";
   } else if (hardAdditionArray.includes(userTest.test.id)) {
-    testcategory = "Addition - Level Twi";
+    testcategory = "Addition - Level Two";
   } else if (easySubtractionArray.includes(userTest.test.id)) {
     testcategory = "Subtraction - Level One";
   } else if (hardSubtractionArray.includes(userTest.test.id)) {
