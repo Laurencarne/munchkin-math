@@ -5,6 +5,7 @@ const body = document.querySelector("body");
 const profileDiv = document.querySelector(".profileDiv");
 const bodySecondTitle = document.querySelector(".bodySecondTitle");
 const fetchUsers = () => fetch(usersUrl).then(response => response.json());
+const totalScoreboard = document.querySelector(".totalScoreboard");
 
 const baseUrl = "http://localhost:3000/";
 const usersUrl = `${baseUrl}users/`;
