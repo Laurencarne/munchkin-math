@@ -47,6 +47,7 @@ const avatarNav = document.querySelector(".avatar");
 const logoutNav = document.querySelector(".logout");
 const goBackNav = document.querySelector(".back");
 const homeNav = document.querySelector(".home");
+const leaderboardNav = document.querySelector(".leaderboard");
 
 const resetPage = () => {
   flexDivBody.innerHTML = "";

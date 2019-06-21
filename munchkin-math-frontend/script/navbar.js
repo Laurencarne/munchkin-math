@@ -4,6 +4,9 @@
 //   }
 //   landingPage();
 // }
+function navLeaderboard() {
+  displayLeaderboardPage();
+}
 
 function goBack() {
   if (currentPage === "LandingPage") {
@@ -34,6 +37,7 @@ function logout() {
   logoutNav.classList.add("hide");
   goBackNav.classList.add("hide");
   homeNav.classList.add("hide");
+  leaderboardNav.classList.add("hide");
 
   setTimeout(() => {
     loginOrSignUp();

@@ -2,6 +2,7 @@ function landingPage() {
   logoutNav.classList.remove("hide");
   goBackNav.classList.remove("hide");
   homeNav.classList.remove("hide");
+  leaderboardNav.classList.remove("hide");
 
   currentPage = "LandingPage";
   counter = 0;
