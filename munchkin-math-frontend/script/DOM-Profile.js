@@ -37,7 +37,7 @@ function addUpdateDiv() {
 
   const myTestsDiv = createElement("div", "innerDiv");
   myTestsDiv.append(
-    createImage("https://i.imgur.com/SfPAZzf.png", "landingPageTestPicture"),
+    createImage("https://i.imgur.com/vPg8yr4.png", "landingPageTestPicture"),
     createElement("p", null, "My Test Results")
   );
   myTestsDiv.addEventListener("click", displayPersonalScores);

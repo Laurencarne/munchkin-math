@@ -56,7 +56,7 @@ function setTestIdAndRun() {
 function runNextQuestionDrag() {
   if (counter >= 4) {
     makeUserTest();
-    displayScorePage();
+    displayTestResultPage();
     setTimeout(() => {
       landingPage();
     }, 3000);

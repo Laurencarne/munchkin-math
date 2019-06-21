@@ -36,16 +36,10 @@ function logUserTestIdsLoop(userTestArray) {
 }
 
 function filteredUserTestsLoop(filteredUserTestsArray) {
-  debugger;
   filteredUserTestsArray.forEach(logPersonalTest);
 }
 
 function logPersonalTest(userTest) {
-  console.log(
-    `Test: ${userTest.test_id}, name: ${userTest.test.name}, Score: ${
-      userTest.score
-    }`
-  );
   const scoreRow = createElement("tr");
   let testcategory;
 
