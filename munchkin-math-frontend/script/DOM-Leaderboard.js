@@ -3,6 +3,7 @@ function displayLeaderboardPage() {
   resetPage();
   createHeader(`Overall Leaderboard`);
   makeTotalScoreboard();
+
   getAllUserTestsFromServer()
     // .then(sortUserTestArraybyUser)
     .then(addUserTestScores);
