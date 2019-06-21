@@ -27,11 +27,25 @@ function addUserTestScores(SortedTestsArray) {
     let selectedName = userTests[0].user.name;
     let score = userTests.map(test => test.score).reduce((a, b) => a + b);
     let userScore = {};
-    userScore[`${selectedName}`] = score;
+    userScore["name"] = `${selectedName}`;
+    userScore["score"] = score;
     aggregateScores.push(userScore);
   });
 
-  console.log(aggregateScores);
+  tests = aggregateScores.slice(0);
+  tests.sort(function(a, b) {
+    let x = a.score;
+    let y = b.score;
+    return y < x ? -1 : y > x ? 1 : 0;
+  });
+
+  tests.forEach(function(y) {
+    flexDivBody.append(createElement("h3", null, y.name));
+  });
+
+  tests.forEach(function(x) {
+    flexDivBody.append(createElement("p", null, x.score));
+  });
 }
 
 function makeTotalScoreboard() {
