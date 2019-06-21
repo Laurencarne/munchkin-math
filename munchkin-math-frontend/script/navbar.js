@@ -25,13 +25,14 @@ function goBack() {
 }
 
 function logout() {
-  debugger;
+  if (currentPage === "ProfilePage") {
+    const profileHolder = document.querySelector(".profileHolder");
+    profileHolder.innerHTML = "";
+  }
   currentUser = null;
   avatarNav.src = "https://i.imgur.com/QbymuiR.png";
   flexDivBody.innerText = "";
   bodySecondTitle.innerHTML = "";
-  // const profileHolder = document.querySelector(".profileHolder");
-  // profileHolder.innerHTML = "";
   bodyTitle.innerHTML = "<h1> GoodBye! </h1>";
 
   const goodbyeImageDiv = createElement("div", "goodbyeImage1");
