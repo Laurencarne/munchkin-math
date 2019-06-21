@@ -10,7 +10,8 @@ function goBack() {
   } else if (
     currentPage === "InsideTest" ||
     currentPage === "TestOptions" ||
-    currentPage === "ProfilePage"
+    currentPage === "ProfilePage" ||
+    currentPage === "LeaderboardPage"
   ) {
     landingPage();
   } else if (currentPage === "UserLogin" || currentPage === "UserSignup") {
