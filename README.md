@@ -11,15 +11,19 @@ It is an app designed for preschool children. Colourful and interactive to pract
 
 
 * View your profile and update your details or see your scores.
+
 ![Munchkin-Math-Users-Area](https://i.imgur.com/FYCzfcB.png)
 
 ![Travel-Plan-Activities-Page](https://i.imgur.com/1vFI8RX.png)
 
 * You can make 5 different types of tests:
   * Numbers is a drag and drop game
+
 ![Munchkin-Math-Numbers-Drag-and-Drop](https://i.imgur.com/Q0i4x5M.png)
-  * Addition / Subtraction Level One are point and click
+
+* Addition / Subtraction Level One are point and click
   * Additon / Subtraction Level Two you type in your answers 
+
 ![Munchkin-Math-Level-Two](https://i.imgur.com/RpUAN2v.png)
 
 * View the leaderboard
