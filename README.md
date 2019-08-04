@@ -1,4 +1,4 @@
-Travel Plan
+Munchkin Maths
 
 [![Munchkin-Math-Watch-The-Demo](https://i.imgur.com/dTaOxx4.png)](https://youtu.be/MhRq97A_zk8)
 
@@ -12,8 +12,6 @@ It is an app designed for preschool children. Colourful and interactive to pract
 
 * View your profile and update your details or see your scores.
 ![Munchkin-Math-Users-Area](https://i.imgur.com/FYCzfcB.png)
-
-![Travel-Plan-Activities-Page](https://i.imgur.com/1vFI8RX.png)
 
 * You can make 5 different types of tests:
   * Numbers is a drag and drop game
